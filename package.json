@@ -9,7 +9,7 @@
     "client": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "NODE_ENV=production node server/server.js"
+    "start": "node server/server.js"
   },
   "keywords": [],
   "author": "",

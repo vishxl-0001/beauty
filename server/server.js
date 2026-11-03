@@ -536,14 +536,18 @@ app.delete('/api/admin/testimonials/:id', requireAdmin, (req, res) => {
   }
 });
 
-// Production: serve built static files from dist
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(projectRoot, 'dist')));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(projectRoot, 'dist', 'index.html'));
+// Production & fallback: serve built static files from dist
+const distPath = path.join(projectRoot, 'dist');
+if (process.env.NODE_ENV === 'production' || fs.existsSync(path.join(distPath, 'index.html'))) {
+  app.use(express.static(distPath));
+  app.use((req, res) => {
+    if (req.path.startsWith('/api/')) {
+      return res.status(404).json({ error: 'API endpoint not found' });
+    }
+    res.sendFile(path.join(distPath, 'index.html'));
   });
 }
 
-app.listen(PORT, () => {
-  console.log(`🌸 Norwen Beauty Salon Backend running at http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🌸 Norwen Beauty Salon Server running on port ${PORT}`);
 });
