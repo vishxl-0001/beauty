@@ -1,6 +1,6 @@
-# Norwen Beauty Salon — Luxury Boutique Website Demo
+# Norwen Beauty Salon — Full-Stack Website & Admin Control Center
 
-A bespoke, mobile-first front-end demonstration website created for **Norwen Beauty Salon** (Terrace End, Palmerston North, New Zealand), founded and operated by master stylist **Wendyl Tagaan**.
+A bespoke, mobile-first website and content management system created for **Norwen Beauty Salon** (Terrace End, Palmerston North, New Zealand), founded and operated by master stylist **Wendyl Tagaan**.
 
 ---
 
@@ -23,34 +23,63 @@ A bespoke, mobile-first front-end demonstration website created for **Norwen Bea
 npm install
 ```
 
-### 2. Start Development Server
+### 2. Start Full-Stack Development
 ```bash
 npm run dev
 ```
-The site will be live at `http://localhost:5173`.
+This simultaneously launches:
+- **Express Backend API:** `http://localhost:5000` (REST API, uploads, session authentication, atomic JSON database)
+- **Vite React Frontend:** `http://localhost:5173` (Website with live proxy to backend API)
 
-### 3. Build for Production
+### 3. Production Build & Start
 ```bash
 npm run build
-npm run preview
+npm start
 ```
+Starts the production server serving both the API endpoints and the compiled frontend at `http://localhost:5000`.
 
 ---
 
-## 🎨 Design Direction: "Luxury but Cute"
+## 🔐 Admin Control Center & Login
 
-- **Aesthetic:** VVIP boutique sanctuary with an airy, feminine, high-end feel and playful cuteness.
-- **Color Palette (tailored to salon photography):**
-  - **Blush Pink:** `#F8E1E4` / `#FDF4F5` (Soft romantic warmth)
-  - **Rose Gold & Coral Rose:** `#E65D73` / `#B76E79` / `#D9A58B` (Derived directly from brand floral logo)
-  - **Champagne & Sand Beige:** `#F6EBDD` / `#FBF5EE` (Balayage hair & pearl tones)
-  - **Warm Ivory Background:** `#FFFDFB` (Pristine, clean canvas)
-  - **Deep Plum Text:** `#3B2230` / `#271420` (High contrast, elegant readability)
-  - **Luxe Gold Accent:** `#C9A24B` (Foil highlights and sparkle accents)
-- **Typography:**
-  - **Headings:** *Cormorant Garamond* (Google Fonts serif display)
-  - **Body:** *Plus Jakarta Sans* (Clean, modern rounded sans)
-  - **Accents & Signatures:** *Great Vibes* (Romantic cursive script)
+The website features an integrated, password-protected administrative console for managing every aspect of the salon in real-time.
+
+### Accessing the Admin Panel
+1. Navigate to: **`http://localhost:5173/#admin`**
+2. Or click the **Shield Icon** in the top navbar, or **"Staff Login"** in the website footer.
+
+### Default Admin Credentials
+- **Username:** `admin`
+- **Password:** `NorwenAdmin2026!`
+
+*(You can change this password anytime in the **Salon Details & Hours** tab inside the admin panel).*
+
+---
+
+## 🛠️ Admin Panel Capabilities
+
+### 1. 📅 Bookings & Inquiries Manager
+- Real-time list of all appointment requests submitted via the website form.
+- Filter inquiries by status: **All**, **Pending**, **Confirmed**, **Completed**, or **Cancelled**.
+- Guest details: full name, phone (click-to-call), email, selected treatment, preferred date, time slot, notes, and timestamp.
+- One-click status updates and delete controls.
+
+### 2. 💇‍♀️ Services & Pricing Management
+- View, edit, or add salon services.
+- **Update Prices:** Change starting rates (e.g. from `$185` to whatever price is desired) and see it update immediately across the client-facing website.
+- Edit service titles, descriptions, categories, durations, badges, and perks.
+- Upload custom service photos or reference gallery images.
+
+### 3. 🖼️ Gallery & Photo Uploads
+- **Upload Photos:** Drag & drop or select PNG, JPG, or WebP files directly from your computer or phone.
+- Categorize photos (**Hair & Color**, **Styling & Cuts**, **Nails & Art**, **Studio & Team**).
+- Add titles, subtitles, and badges (e.g., *Trend Alert*, *Guest Love*).
+- **Delete Photos:** Deletes the photo from the gallery and removes uploaded files from disk.
+
+### 4. ⚙️ Salon Details, Hours & Security
+- Edit salon phone number, email address, physical location, and Instagram profile.
+- Update the daily opening hours schedule.
+- Securely update the admin account password using cryptographic verification.
 
 ---
 
@@ -74,65 +103,57 @@ Every image in `/images` is utilized across the demo:
 
 ---
 
-## ✏️ How to Edit Content & Prices
+## 📂 Project Architecture
 
-All client text is centralized in **one single file**: `src/data/content.js`.
-
-### 1. Update Salon Contact & Address
-Edit `businessDetails` in `src/data/content.js`:
-```javascript
-export const businessDetails = {
-  phone: '+64 274 801 855',
-  email: 'wendylsoriano51@gmail.com',
-  address: '98 Napier Road, Terrace End, Palmerston North 4410, New Zealand',
-  instagram: 'https://www.instagram.com/wendyltagaan',
-  // ...
-};
 ```
-
-### 2. Update Services & Pricing
-Edit `salonServices` in `src/data/content.js`:
-```javascript
-{
-  id: 'balayage-foil',
-  title: 'Signature Balayage & Foil Dimension',
-  category: 'Hair & Color',
-  price: 'from $185', // <-- EDIT STARTING PRICE HERE
-  duration: '2.5 - 3.5 hrs',
-  description: '...',
-  perks: ['...']
-}
+├── public/
+│   ├── images/          # Default salon photography and brand assets
+│   └── uploads/         # Admin-uploaded client photos & hairstyles
+├── server/
+│   ├── auth.js          # HMAC-SHA256 session token system & password hashing
+│   ├── db.js            # Atomic JSON database manager
+│   ├── server.js        # Express REST API (public data, bookings, admin CRUD, file uploads)
+│   └── data/
+│       └── db.json      # Persistent salon database
+├── src/
+│   ├── components/
+│   │   ├── admin/
+│   │   │   ├── AdminLogin.jsx       # Branded luxury login screen
+│   │   │   └── AdminDashboard.jsx   # Full CRUD control panel (bookings, services, photos, hours)
+│   │   ├── About.jsx
+│   │   ├── BookingSection.jsx       # Connected to POST /api/bookings with confetti
+│   │   ├── ContactLocation.jsx
+│   │   ├── FloatingParticles.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Gallery.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Lightbox.jsx
+│   │   ├── MarqueeStrip.jsx
+│   │   ├── MobileBottomBar.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── Preloader.jsx
+│   │   ├── Services.jsx
+│   │   ├── SparkleCursor.jsx
+│   │   ├── Testimonials.jsx
+│   │   └── WhyChooseUs.jsx
+│   ├── context/
+│   │   └── SalonContext.jsx         # Live data synchronization between backend and frontend
+│   ├── data/
+│   │   ├── content.js
+│   │   └── images.js
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── package.json
+└── vite.config.js
 ```
-
-### 3. Update Opening Hours
-Edit `salonHours` in `src/data/content.js`:
-```javascript
-export const salonHours = [
-  { days: 'Monday – Wednesday', hours: '9:00 AM – 5:30 PM' },
-  { days: 'Thursday (Late Night)', hours: '9:00 AM – 7:30 PM' },
-  // ...
-];
-```
-
-### 4. Update Images
-Replace files inside `public/images/` and update references in `src/data/images.js`.
 
 ---
 
-## 📱 Mobile-First Features
+## 📱 Mobile-First Quality
 
 - **Thumb-Friendly Sticky Bottom Bar:** Quick actions for Call, SMS, Book, and Instagram.
 - **Safe Area Insets:** Automatically accounts for iPhone home indicators (`env(safe-area-inset-bottom)`).
-- **Responsive Breakpoints Tested:** 360px, 390px, 430px, 768px, 1024px, and 1280px+.
+- **Responsive Breakpoints:** 360px, 390px, 430px, 768px, 1024px, and 1280px+.
 - **Touch Gestures:** Swipe-friendly gallery lightbox and testimonials carousel.
 - **Zero Horizontal Scrolling:** Strict fluid widths and clamp typography.
-
----
-
-## ⚠️ Placeholders Requiring Client Confirmation
-
-1. **Service Menu & Starting Rates:** Balayage (`from $185`), Creative Vivids (`from $160`), Layered Cut & Blowout (`from $75`), Pearl French Nails (`from $85`), Hand-Painted Art (`from $95`), Botanical Hair Spa (`from $65`).
-2. **Opening Hours:** Mon–Wed 9–5:30, Thu late night 9–7:30, Fri 9–6, Sat 9:30–4:30, Sun Closed.
-3. **Founder Story & Bio:** Exact years of experience and personal salon background notes.
-4. **Client Testimonials:** Generic first-name reviews (`Sophie M.`, `Chloe T.`, etc.) to be replaced or verified with actual client feedback.
-5. **Stats Counters:** 1,250+ Happy Clients, 9+ Years Artistry, 3,400+ Treatments.

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Heart, Eye, ZoomIn } from 'lucide-react';
-import { galleryItems } from '../data/images';
+import { useSalon } from '../context/SalonContext';
 import Lightbox from './Lightbox';
 
 export default function Gallery({ onBookService }) {
+  const { gallery } = useSalon();
+  const galleryItems = gallery;
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [poppedHearts, setPoppedHearts] = useState({});

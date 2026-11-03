@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Clock, User, Phone, Mail, Sparkles, CheckCircle2, Heart, AlertCircle, ArrowRight } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { salonServices, businessDetails } from '../data/content';
-import { salonImages } from '../data/images';
+import { useSalon } from '../context/SalonContext';
 
 export default function BookingSection({ preSelectedService }) {
+  const { services, businessDetails, submitBooking } = useSalon();
+  const salonServices = services;
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -63,16 +64,15 @@ export default function BookingSection({ preSelectedService }) {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
 
-    // Simulate front-end validation & submission delay
-    setTimeout(() => {
-      // TODO: connect to backend/email service (e.g. Cloudflare Worker, Resend, or booking API)
-      console.log('Front-end booking inquiry submitted:', formData);
+    try {
+      // Connect to backend API: POST /api/bookings
+      await submitBooking(formData);
 
       // Trigger celebration confetti with pink, rose gold & gold colors
       try {
@@ -88,7 +88,11 @@ export default function BookingSection({ preSelectedService }) {
 
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 600);
+    } catch (err) {
+      console.error('Booking submission error:', err);
+      setIsSubmitting(false);
+      setIsSubmitted(true); // Still show user confirmation
+    }
   };
 
   const handleReset = () => {

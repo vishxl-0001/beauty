@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Clock, Check, Calendar, ArrowRight } from 'lucide-react';
-import { salonServices } from '../data/content';
+import { useSalon } from '../context/SalonContext';
 
 export default function Services({ onSelectService }) {
+  const { services } = useSalon();
   const [activeCategory, setActiveCategory] = useState('All');
 
   const categories = ['All', 'Hair & Color', 'Styling & Cuts', 'Nails & Art'];
 
   const filteredServices =
     activeCategory === 'All'
-      ? salonServices
-      : salonServices.filter((s) => s.category.toLowerCase().includes(activeCategory.toLowerCase().split(' ')[0]));
+      ? services
+      : services.filter((s) => s.category.toLowerCase().includes(activeCategory.toLowerCase().split(' ')[0]));
 
   return (
     <section id="services" className="py-20 md:py-28 relative overflow-hidden bg-[#FFFDFB]">

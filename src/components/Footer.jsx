@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUp, Heart, Phone, Mail, MapPin, Sparkles } from 'lucide-react';
+import { ArrowUp, Heart, Phone, Mail, MapPin, Sparkles, Shield } from 'lucide-react';
 import { InstagramIcon } from './Icons';
-import { businessDetails } from '../data/content';
+import { useSalon } from '../context/SalonContext';
 
-export default function Footer({ onBookClick }) {
+export default function Footer({ onBookClick, onOpenAdmin }) {
+  const { businessDetails } = useSalon();
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -145,7 +146,17 @@ export default function Footer({ onBookClick }) {
 
         {/* Bottom Bar & Back to top button */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60">
-          <p>© {businessDetails.copyrightYear} Norwen Beauty Salon. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <p>© {businessDetails.copyrightYear} Norwen Beauty Salon. All rights reserved.</p>
+            <button
+              type="button"
+              onClick={onOpenAdmin}
+              className="text-white/40 hover:text-[#F8A5B2] transition-colors flex items-center gap-1"
+            >
+              <Shield className="w-3 h-3" />
+              <span>Staff Login</span>
+            </button>
+          </div>
 
           <p className="flex items-center gap-1 text-[#F8A5B2]">
             <span>Crafted with</span>

@@ -2,10 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, Sparkles, ExternalLink, Heart } from 'lucide-react';
 import { InstagramIcon } from './Icons';
-import { businessDetails, salonHours } from '../data/content';
+import { useSalon } from '../context/SalonContext';
 import { salonImages } from '../data/images';
 
 export default function ContactLocation() {
+  const { businessDetails, salonHours } = useSalon();
   return (
     <section id="contact" className="py-20 md:py-28 relative overflow-hidden bg-white/70">
       {/* Decorative Blur */}

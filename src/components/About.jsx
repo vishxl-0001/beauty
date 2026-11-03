@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Heart, Award, CheckCircle2, MapPin } from 'lucide-react';
-import { aboutStory, salonStats, businessDetails } from '../data/content';
+import { aboutStory } from '../data/content';
+import { useSalon } from '../context/SalonContext';
 import { salonImages } from '../data/images';
 
 export default function About() {
+  const { salonStats, businessDetails } = useSalon();
   return (
     <section id="about" className="py-20 md:py-28 relative overflow-hidden bg-white/40">
       {/* Decorative Background Blob */}

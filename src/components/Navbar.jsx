@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Calendar, Menu, X, Sparkles, Heart } from 'lucide-react';
+import { Phone, Calendar, Menu, X, Sparkles, Heart, Shield } from 'lucide-react';
 import { InstagramIcon } from './Icons';
-import { businessDetails } from '../data/content';
+import { useSalon } from '../context/SalonContext';
 
-export default function Navbar({ onBookClick }) {
+export default function Navbar({ onBookClick, onOpenAdmin }) {
+  const { businessDetails } = useSalon();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -124,6 +125,17 @@ export default function Navbar({ onBookClick }) {
 
           {/* Right Action Buttons */}
           <div className="flex items-center gap-3">
+            {/* Admin Portal Quick Access */}
+            <button
+              type="button"
+              onClick={onOpenAdmin}
+              title="Salon Admin Login"
+              aria-label="Open Admin Console"
+              className="hidden sm:flex items-center justify-center w-9 h-9 rounded-full bg-[#FFF5F7] border border-[#F8E1E4] text-[#B76E79] hover:text-[#E65D73] hover:border-[#E65D73]/40 transition-all shadow-2xs"
+            >
+              <Shield className="w-4 h-4" />
+            </button>
+
             {/* Quick Instagram Link (Desktop) */}
             <a
               href={businessDetails.instagram}
@@ -236,6 +248,17 @@ export default function Navbar({ onBookClick }) {
                   <span>Instagram</span>
                 </a>
               </div>
+
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  if (onOpenAdmin) onOpenAdmin();
+                }}
+                className="w-full py-2.5 rounded-2xl bg-white border border-[#F8E1E4] text-[#3B2230] text-xs font-semibold flex items-center justify-center gap-1.5"
+              >
+                <Shield className="w-3.5 h-3.5 text-[#E65D73]" />
+                <span>Salon Staff / Admin Portal</span>
+              </button>
 
               <button
                 onClick={() => {

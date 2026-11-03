@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight, Quote, Heart, Sparkles } from 'lucide-react';
-import { testimonials } from '../data/content';
+import { useSalon } from '../context/SalonContext';
 
 export default function Testimonials() {
+  const { testimonials } = useSalon();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
