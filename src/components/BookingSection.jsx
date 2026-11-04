@@ -145,8 +145,46 @@ export default function BookingSection({ preSelectedService }) {
     setIsSubmitting(true);
 
     try {
-      // Connect to backend API: POST /api/bookings
+      // 1. Connect to backend API: POST /api/bookings
       await submitBooking(formData);
+
+      // 2. Dispatch email to Wendy via Web3Forms
+      const accessKey =
+        businessDetails?.web3formsAccessKey ||
+        import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+      if (accessKey) {
+        try {
+          const web3Data = new FormData();
+          web3Data.append('access_key', accessKey);
+          web3Data.append('subject', `✨ New Salon Appointment Request: ${formData.service} - ${formData.fullName}`);
+          web3Data.append('from_name', 'Norwen Beauty Salon Bookings');
+          web3Data.append('replyto', formData.email);
+          web3Data.append('Client Name', formData.fullName);
+          web3Data.append('Phone Number', formData.phone);
+          web3Data.append('Email Address', formData.email);
+          web3Data.append('Requested Treatment', formData.service);
+          web3Data.append('Requested Date', formData.date);
+          web3Data.append('Preferred Time Slot', formData.timeSlot);
+          web3Data.append('Notes / Hair Goals', formData.notes || 'None specified');
+          web3Data.append('Studio Location', '98 Napier Road, Terrace End, Palmerston North');
+
+          const w3Res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: web3Data,
+          });
+          const w3Json = await w3Res.json();
+          if (w3Json.success) {
+            console.log('Web3Forms: Email dispatched successfully to Wendy!', w3Json);
+          } else {
+            console.warn('Web3Forms notice:', w3Json.message);
+          }
+        } catch (emailErr) {
+          console.warn('Web3Forms email delivery notice:', emailErr);
+        }
+      } else {
+        console.info('Web3Forms access key not set. Set it in Admin Dashboard Settings or .env');
+      }
 
       // Trigger celebration confetti with royal gold & champagne colors
       try {

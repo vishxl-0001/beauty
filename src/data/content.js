@@ -23,6 +23,7 @@ export const businessDetails = {
   country: 'New Zealand',
   instagram: 'https://www.instagram.com/wendyltagaan',
   instagramHandle: '@wendyltagaan',
+  web3formsAccessKey: '',
   googleMapsUrl:
     'https://maps.google.com/maps?q=98+Napier+Road,+Terrace+End,+Palmerston+North+4410,+New+Zealand&t=&z=15&ie=UTF8&iwloc=&output=embed',
   copyrightYear: 2026,

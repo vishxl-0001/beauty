@@ -925,6 +925,37 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                 </div>
 
                 <div>
+                  <div className="flex items-center justify-between mb-1">
+                    <label className="block text-xs font-semibold text-[#251B12] uppercase">
+                      Web3Forms Access Key (Instant Booking Email to Wendy)
+                    </label>
+                    <a
+                      href="https://web3forms.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[11px] font-semibold text-[#A67C1E] hover:underline"
+                    >
+                      Get Free Key at web3forms.com ↗
+                    </a>
+                  </div>
+                  <input
+                    type="text"
+                    value={businessDetails.web3formsAccessKey || ''}
+                    onChange={(e) =>
+                      setBusinessDetails({
+                        ...businessDetails,
+                        web3formsAccessKey: e.target.value.trim(),
+                      })
+                    }
+                    placeholder="e.g. xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+                    className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs font-mono text-[#251B12] bg-[#FAF5EA]/50"
+                  />
+                  <p className="text-[11px] text-[#8C7355] mt-1">
+                    Enter the access key for Wendy's email ({businessDetails.email || 'wendylsoriano51@gmail.com'}). Every appointment booking submitted by clients will automatically be emailed to her!
+                  </p>
+                </div>
+
+                <div>
                   <label className="block text-xs font-semibold text-[#251B12] uppercase mb-1">
                     Subheadline Tagline
                   </label>
