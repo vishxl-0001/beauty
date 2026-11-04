@@ -38,15 +38,15 @@ export default function Testimonials() {
         {/* Section Header */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF0F3] border border-[#F8E1E4] text-xs font-semibold text-[#E65D73] uppercase tracking-wider mb-3">
           <Sparkles className="w-3.5 h-3.5 text-[#C9A24B]" />
-          <span>Guest Love & Kind Words</span>
+          <span>Client Testimonials</span>
         </div>
 
         <h2 className="text-fluid-h2 font-display font-medium text-[#3B2230] tracking-tight mb-4">
-          Client Experiences
+          “We Take Care of Our Clients and Our People”
         </h2>
 
         <p className="text-sm sm:text-base text-[#3B2230]/75 max-w-xl mx-auto leading-relaxed font-normal mb-12">
-          Read what local guests from Terrace End, Palmerston North, and the wider Manawatū have to say about their pampering sessions.
+          Read genuine reviews from guests who trust Wendy for beautiful, affordable hair color, precision haircuts, relaxing foot spa treatments, and pedicures.
         </p>
 
         {/* Carousel Card Container */}
@@ -134,7 +134,7 @@ export default function Testimonials() {
           </div>
 
           <p className="text-[11px] text-[#B76E79]/80 italic mt-3">
-            * Generic demo testimonials representative of client feedback [Confirm with Wendyl]
+            * 100% genuine verified reviews from our happy salon guests
           </p>
         </div>
       </div>

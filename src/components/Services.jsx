@@ -7,12 +7,20 @@ export default function Services({ onSelectService }) {
   const { services } = useSalon();
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const categories = ['All', 'Hair & Color', 'Styling & Cuts', 'Nails & Art'];
+  const categories = ['All', 'HairCare', 'Treatments', 'Nail Care', 'Face & Body'];
 
   const filteredServices =
     activeCategory === 'All'
       ? services
-      : services.filter((s) => s.category.toLowerCase().includes(activeCategory.toLowerCase().split(' ')[0]));
+      : services.filter((s) => {
+          if (activeCategory === 'Face & Body') {
+            return s.category === 'Face Care' || s.category === 'Body Care';
+          }
+          if (activeCategory === 'Nail Care') {
+            return s.category === 'Nail Care' || s.category.includes('Nail');
+          }
+          return s.category.toLowerCase().includes(activeCategory.toLowerCase());
+        });
 
   return (
     <section id="services" className="py-20 md:py-28 relative overflow-hidden bg-[#FFFDFB]">
@@ -37,7 +45,7 @@ export default function Services({ onSelectService }) {
           </p>
 
           <p className="text-[11px] text-[#B76E79] font-medium tracking-wide uppercase mt-2">
-            * All prices shown are indicative starting rates [Editable demo values]
+            * Affordable, high-quality salon care with Wendy in Palmerston North
           </p>
 
           {/* Category Filter Pills */}

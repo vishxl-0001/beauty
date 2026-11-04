@@ -36,12 +36,15 @@ const initialData = {
     copyrightYear: 2026,
   },
   salonHours: [
-    { days: 'Monday – Wednesday', hours: '9:00 AM – 5:30 PM' },
-    { days: 'Thursday (Late Night)', hours: '9:00 AM – 7:30 PM' },
-    { days: 'Friday', hours: '9:00 AM – 6:00 PM' },
-    { days: 'Saturday', hours: '9:30 AM – 4:30 PM' },
-    { days: 'Sunday', hours: 'Closed / By Special Appointment' },
-  ],
+  {
+    "days": "Monday – Friday",
+    "hours": "9:00 AM – 6:00 PM"
+  },
+  {
+    "days": "Saturday & Sunday",
+    "hours": "2:30 PM – 8:00 PM"
+  }
+],
   salonStats: [
     { value: 1250, suffix: '+', label: 'Happy Glow-Ups', helper: 'Devoted local clients' },
     { value: 9, suffix: '+', label: 'Years Artistry', helper: 'Mastery in styling & nails' },
@@ -49,79 +52,142 @@ const initialData = {
     { value: 100, suffix: '%', label: 'Boutique Care', helper: 'Warm, unhurried service' },
   ],
   services: [
-    {
-      id: 'balayage-foil',
-      title: 'Signature Balayage & Foil Dimension',
-      category: 'Hair & Color',
-      price: 'from $185',
-      duration: '2.5 - 3.5 hrs',
-      image: '/images/hair2.jpg',
-      badge: 'Guest Favorite',
-      description:
-        'Seamless honey, champagne, or cool blonde hand-painted transitions customized to your skin tone and natural fall, sealed with a luminous gloss glaze.',
-      perks: ['Bond-protecting treatment', 'Gloss toner included', 'Signature bouncy finish'],
-    },
-    {
-      id: 'creative-vivids',
-      title: 'Creative Color & Peekaboo Underlights',
-      category: 'Hair & Color',
-      price: 'from $160',
-      duration: '2 - 3 hrs',
-      image: '/images/hair1.jpg',
-      badge: 'Artistic Specialty',
-      description:
-        'Expressive jewel tones—rich violet money pieces, mystical emerald underlights, and pastel pops that peek through your everyday style.',
-      perks: ['Vibrant fade-resistant pigments', 'Precision lightening', 'Hydration color mask'],
-    },
-    {
-      id: 'layered-blowout',
-      title: 'Precision Layered Cut & 90s Bouncy Blowout',
-      category: 'Styling & Cuts',
-      price: 'from $75',
-      duration: '60 mins',
-      image: '/images/hair4.jpg',
-      badge: 'Everyday Luxury',
-      description:
-        'Face-framing textured layers designed to maximize natural volume and movement, finished with a salon-grade hot round brush thermal blowout.',
-      perks: ['Relaxing scalp massage wash', 'Eleven Australia styling elixir', 'Long-lasting wave hold'],
-    },
-    {
-      id: 'pearl-french-nails',
-      title: 'Couture Pearl French Almond Manicure',
-      category: 'Nails & Art',
-      price: 'from $85',
-      duration: '75 mins',
-      image: '/images/nails2.jpg',
-      badge: 'Bridal & Red Carpet',
-      description:
-        'Glossy almond or sculpted gel nails with pristine micro-French tips, individually hand-embellished with iridescent pearl beads and crystal drops.',
-      perks: ['Cuticle detox & nourishment', 'Strengthening builder gel', 'High-gloss anti-scratch topcoat'],
-    },
-    {
-      id: 'handpainted-nailart',
-      title: 'Kawaii & Bespoke Hand-Painted Nail Art',
-      category: 'Nails & Art',
-      price: 'from $95',
-      duration: '90 mins',
-      image: '/images/nails1.jpg',
-      badge: 'Playful & Cute',
-      description:
-        'Intricate micro-artistry: cute bunny characters, retro 3D bows, pastel florals, or bold pop-art graphics tailored to your whimsical aesthetic.',
-      perks: ['Hand-drawn custom artwork', 'Custom press-on options available', 'Long-wear gel durability'],
-    },
-    {
-      id: 'restorative-hair-spa',
-      title: 'Botanical Hair & Scalp Rejuvenation',
-      category: 'Hair & Care',
-      price: 'from $65',
-      duration: '45 mins',
-      image: '/images/hair5.jpg',
-      badge: 'Restorative',
-      description:
-        'Deep restorative lipid infusion to repair heat damage, rehydrate dry ends, and restore mirror-like shine and silkiness to stressed tresses.',
-      perks: ['Warm herbal towel wrap', 'Invigorating scalp acupressure', 'Leave-in moisture shield'],
-    },
-  ],
+  {
+    "id": "haircut-styling",
+    "title": "Haircut and Styling",
+    "category": "HairCare",
+    "price": "Starts at $25",
+    "duration": "45 - 60 mins",
+    "image": "/images/hair4.jpg",
+    "badge": "Popular",
+    "description": "Professional precision haircut tailored to your natural hair texture and face shape, finished with a fresh, bouncy blow-dry style.",
+    "perks": [
+      "Personal hair consultation",
+      "Scalp wash & prep",
+      "Bouncy blow-dry styling"
+    ]
+  },
+  {
+    "id": "color-highlights",
+    "title": "Color and Highlights",
+    "category": "HairCare",
+    "price": "Starts at $80",
+    "duration": "2 - 3.5 hrs",
+    "image": "/images/hair2.jpg",
+    "badge": "Client Favorite",
+    "description": "Luminous dimensional foils, seamless balayage, or vibrant full color coverage tailored to brighten your complexion and add healthy radiance.",
+    "perks": [
+      "Custom shade formulation",
+      "Radiant gloss glaze toner",
+      "Affordable luxury color"
+    ]
+  },
+  {
+    "id": "perm-straightening",
+    "title": "Perm and Straightening",
+    "category": "HairCare",
+    "price": "Starts at $70",
+    "duration": "2 - 3 hrs",
+    "image": "/images/hair5.jpg",
+    "badge": "Texture Mastery",
+    "description": "Transform your natural hair: gorgeous bouncy, defined curls with a gentle perm, or ultra-silky, smooth chemical straightening for easy daily styling.",
+    "perks": [
+      "Gentle softening formula",
+      "Heat protectant seal",
+      "Long-lasting wave or silk finish"
+    ]
+  },
+  {
+    "id": "hair-spa",
+    "title": "Hair Spa",
+    "category": "Treatments",
+    "price": "Starts at $60",
+    "duration": "45 mins",
+    "image": "/images/hair1.jpg",
+    "badge": "Restorative",
+    "description": "A deeply restorative spa ritual combining rich botanical moisture with an invigorating scalp massage to revive dull, stressed, or dry tresses.",
+    "perks": [
+      "Invigorating scalp acupressure",
+      "Warm herbal steam wrap",
+      "Intensive hydration therapy"
+    ]
+  },
+  {
+    "id": "keratin-treatment",
+    "title": "Keratin Treatment",
+    "category": "Treatments",
+    "price": "Starts at $80",
+    "duration": "2 - 2.5 hrs",
+    "image": "/images/hair3.jpg",
+    "badge": "Anti-Frizz Shine",
+    "description": "Intensive protein smoothing therapy that seals damaged cuticles, eliminates stubborn humidity frizz, and imparts radiant glass-like shine.",
+    "perks": [
+      "Eliminates 95% of frizz",
+      "Dramatically cuts drying time",
+      "Results last for months"
+    ]
+  },
+  {
+    "id": "deep-conditioning",
+    "title": "Deep Conditioning",
+    "category": "Treatments",
+    "price": "Starts at $40",
+    "duration": "30 mins",
+    "image": "/images/hair2.jpg",
+    "badge": "Quick Glow",
+    "description": "Instant targeted hydration and lipid replenishment to restore softness, combability, and healthy bounce to dry or heat-styled hair.",
+    "perks": [
+      "Protein & lipid infusion",
+      "Instant detangling & gloss",
+      "Scalp soothing massage"
+    ]
+  },
+  {
+    "id": "threading",
+    "title": "Threading",
+    "category": "Face Care",
+    "price": "Starts at $30",
+    "duration": "20 - 30 mins",
+    "image": "/images/owner.png",
+    "badge": "Precision Shape",
+    "description": "Gentle, ultra-precise facial hair threading for crisp, clean eyebrow shaping, upper lip, and facial grooming without chemicals or harsh peeling.",
+    "perks": [
+      "Gentle on sensitive skin",
+      "Razor-sharp brow contouring",
+      "Soothing aloe vera aftercare"
+    ]
+  },
+  {
+    "id": "waxing",
+    "title": "Waxing",
+    "category": "Body Care",
+    "price": "Starts at $30",
+    "duration": "30 - 45 mins",
+    "image": "/images/salon.jpg",
+    "badge": "Silky Smooth",
+    "description": "Hygienic, comfortable body waxing using premium skin-calming wax formulas for silky, touchable smoothness that lasts for weeks.",
+    "perks": [
+      "Hygienic single-use applicators",
+      "Pre & post-wax calming elixirs",
+      "Silky, long-lasting results"
+    ]
+  },
+  {
+    "id": "manicure-pedicure",
+    "title": "Manicure & Pedicure",
+    "category": "Nail Care",
+    "price": "Starts at $25",
+    "duration": "45 - 60 mins",
+    "image": "/images/nails2.jpg",
+    "badge": "Guest Love",
+    "description": "Pampering nail shaping, meticulous cuticle care, soothing foot spa massage, and long-lasting glossy polish for beautifully rejuvenated hands and feet.",
+    "perks": [
+      "Relaxing foot spa & foot massage",
+      "Nail shaping & buffing",
+      "High-shine durable finish"
+    ]
+  }
+],
   gallery: [
     {
       id: 'hair2',
@@ -235,47 +301,34 @@ const initialData = {
     },
   ],
   testimonials: [
-    {
-      id: 1,
-      name: 'Sophie M.',
-      location: 'Palmerston North',
-      treatment: 'Signature Balayage & Cut',
-      rating: 5,
-      quote:
-        'Wendyl completely transformed my hair! The balayage is so soft and blended perfectly with zero harsh lines. The salon is such a lovely, calming place—I left feeling like royalty.',
-      date: 'Recent Guest',
-    },
-    {
-      id: 2,
-      name: 'Chloe T.',
-      location: 'Terrace End',
-      treatment: 'Pearl French Nails',
-      rating: 5,
-      quote:
-        'The pearl almond nails are pure perfection! I got non-stop compliments at my sister’s engagement. Wendyl is gentle, meticulous, and so talented with hand-placed details.',
-      date: 'Recent Guest',
-    },
-    {
-      id: 3,
-      name: 'Aimee L.',
-      location: 'Manawatū',
-      treatment: 'Layered Cut & Blowout',
-      rating: 5,
-      quote:
-        'Finally found a stylist who truly understands bouncy layers without taking away my length! The blowout held for almost a whole week. Wendyl is warm, attentive, and so sweet.',
-      date: 'Recent Guest',
-    },
-    {
-      id: 4,
-      name: 'Jessica K.',
-      location: 'Palmerston North',
-      treatment: 'Emerald Peekaboo & Nail Art',
-      rating: 5,
-      quote:
-        'I wanted something playful yet work-appropriate, and the emerald underlights Wendyl designed are stunning! Plus, the cute hand-drawn nail art is pure joy. Highly recommend!',
-      date: 'Recent Guest',
-    },
-  ],
+  {
+    "id": 1,
+    "name": "Rhudna Honey",
+    "location": "Palmerston North",
+    "treatment": "Color and Highlights",
+    "rating": 5,
+    "quote": "100 percent very legitimate, I love my hair color and it was very affordable. Please book wendy, if you are looking for an affordable and beautiful hair color",
+    "date": "Verified Client"
+  },
+  {
+    "id": 2,
+    "name": "Marites Alamil",
+    "location": "Terrace End",
+    "treatment": "Foot Spa Massage & Pedicure",
+    "rating": 5,
+    "quote": "Wendy did it very well in taking care of my feet, the foot spa massage and pedicure is really great,That’s why I always come back for an appointment. Thank You Wendy .",
+    "date": "Verified Client"
+  },
+  {
+    "id": 3,
+    "name": "DC",
+    "location": "Palmerston North",
+    "treatment": "Regular Haircut & Styling",
+    "rating": 5,
+    "quote": "Wendy always take care of my hair when it comes to regular haircuts, I save a lot of money while having a good hair cut",
+    "date": "Verified Client"
+  }
+],
   bookings: [
     {
       id: 'bk_demo_1',

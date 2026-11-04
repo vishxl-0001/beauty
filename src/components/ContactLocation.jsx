@@ -112,8 +112,8 @@ export default function ContactLocation() {
                   <Clock className="w-4 h-4 text-[#E65D73]" />
                   <h3 className="font-display text-lg font-semibold">Opening Hours</h3>
                 </div>
-                <span className="text-[10px] text-[#B76E79] uppercase font-bold tracking-wider">
-                  Editable Demo
+                <span className="text-[10px] text-[#E65D73] uppercase font-bold tracking-wider">
+                  Weekly Schedule
                 </span>
               </div>
 

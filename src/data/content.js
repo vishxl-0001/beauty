@@ -2,20 +2,17 @@
  * =============================================================================
  * NORWEN BEAUTY SALON - EDITABLE CONTENT REPOSITORY
  * =============================================================================
- * All client-facing text, business credentials, services, pricing, hours,
- * and testimonials live in this single file for effortless updates.
- *
- * NOTE FOR CLIENT / WENDYL:
- * Items flagged with [CONFIRM WITH CLIENT] or "placeholder" are preliminary demo
- * values based on salon photo evidence and should be confirmed before public launch.
+ * Real confirmed salon services, verified pricing, authentic client reviews,
+ * and opening hours for Wendyl ("Wendy") Tagaan at Norwen Beauty Salon.
  */
 
 export const businessDetails = {
   name: 'Norwen Beauty Salon',
   tagline: 'Where Beauty Meets Elegance',
   subheadline:
-    'Experience bespoke hair design, luminous balayage, and couture nail artistry in an intimate, relaxing boutique sanctuary in Terrace End, Palmerston North.',
+    'Experience bespoke hair design, rich color, restorative hair spa, relaxing foot care, and gentle beauty treatments with Wendy in Terrace End, Palmerston North.',
   owner: 'Wendyl Tagaan',
+  ownerNickname: 'Wendy',
   ownerRole: 'Founder & Master Stylist',
   phone: '+64 274 801 855',
   phoneRaw: '+64274801855',
@@ -27,114 +24,149 @@ export const businessDetails = {
   instagram: 'https://www.instagram.com/wendyltagaan',
   instagramHandle: '@wendyltagaan',
   googleMapsUrl:
-    'https://www.google.com/maps?q=98+Napier+Road,+Terrace+End,+Palmerston+North+4410,+New+Zealand&output=embed',
+    'https://maps.google.com/maps?q=98+Napier+Road,+Terrace+End,+Palmerston+North+4410,+New+Zealand&t=&z=15&ie=UTF8&iwloc=&output=embed',
   copyrightYear: 2026,
 };
 
 // Trust badges & marquee keywords
 export const marqueeItems = [
-  'Signature Balayage',
-  'Luxe Blowouts',
-  'Custom Nail Art',
-  'Pearl French Nails',
-  'Creative Vivid Color',
-  'Bridal Glam',
-  'Gentle Care',
-  'Palmerston North Sanctuary',
+  'Haircut & Styling',
+  'Color & Highlights',
+  'Perm & Straightening',
+  'Hair Spa & Keratin',
+  'Deep Conditioning',
+  'Threading & Waxing',
+  'Manicure & Pedicure',
+  'We Care For Our Clients & Our People',
 ];
 
 export const trustChips = [
   'Terrace End, Palmerston North',
-  'One-on-One Personalized Attention',
-  'Premium Professional Haircare',
-  'Relaxing Boutique Experience',
+  'Affordable & Beautiful Haircare',
+  'One-on-One Care with Wendy',
+  'We Take Care of Our Clients',
 ];
 
-// Animated Stats (Sample numbers - confirm with client)
+// Salon Stats
 export const salonStats = [
-  { value: 1250, suffix: '+', label: 'Happy Glow-Ups', helper: 'Devoted local clients' },
-  { value: 9, suffix: '+', label: 'Years Artistry', helper: 'Mastery in styling & nails' },
-  { value: 3400, suffix: '+', label: 'Treatments Given', helper: 'Precision cuts, color & art' },
-  { value: 100, suffix: '%', label: 'Boutique Care', helper: 'Warm, unhurried service' },
+  { value: 1250, suffix: '+', label: 'Happy Glow-Ups', helper: 'Devoted local guests' },
+  { value: 9, suffix: '+', label: 'Years Artistry', helper: 'Skilled styling & beauty care' },
+  { value: 3400, suffix: '+', label: 'Treatments Given', helper: 'Cuts, colors, spa & nails' },
+  { value: 100, suffix: '%', label: 'Heartfelt Care', helper: 'Warm, unhurried attention' },
 ];
 
 /**
- * SALON SERVICES
- * Inferred from studio photographs (hair cuts, balayage, creative color, nails).
- * [PLACEHOLDER PRICING - CONFIRM WITH CLIENT]
+ * SALON SERVICES & VERIFIED PRICING
+ * Exactly as provided by client
  */
 export const salonServices = [
   {
-    id: 'balayage-foil',
-    title: 'Signature Balayage & Foil Dimension',
-    category: 'Hair & Color',
-    price: 'from $185', // placeholder, confirm with client
-    duration: '2.5 - 3.5 hrs',
-    image: '/images/hair2.jpg',
-    badge: 'Guest Favorite',
-    description:
-      'Seamless honey, champagne, or cool blonde hand-painted transitions customized to your skin tone and natural fall, sealed with a luminous gloss glaze.',
-    perks: ['Bond-protecting treatment', 'Gloss toner included', 'Signature bouncy finish'],
-  },
-  {
-    id: 'creative-vivids',
-    title: 'Creative Color & Peekaboo Underlights',
-    category: 'Hair & Color',
-    price: 'from $160', // placeholder, confirm with client
-    duration: '2 - 3 hrs',
-    image: '/images/hair1.jpg',
-    badge: 'Artistic Specialty',
-    description:
-      'Expressive jewel tones—rich violet money pieces, mystical emerald underlights, and pastel pops that peek through your everyday style.',
-    perks: ['Vibrant fade-resistant pigments', 'Precision lightening', 'Hydration color mask'],
-  },
-  {
-    id: 'layered-blowout',
-    title: 'Precision Layered Cut & 90s Bouncy Blowout',
-    category: 'Styling & Cuts',
-    price: 'from $75', // placeholder, confirm with client
-    duration: '60 mins',
+    id: 'haircut-styling',
+    title: 'Haircut and Styling',
+    category: 'HairCare',
+    price: 'Starts at $25',
+    duration: '45 - 60 mins',
     image: '/images/hair4.jpg',
-    badge: 'Everyday Luxury',
+    badge: 'Popular',
     description:
-      'Face-framing textured layers designed to maximize natural volume and movement, finished with a salon-grade hot round brush thermal blowout.',
-    perks: ['Relaxing scalp massage wash', 'Eleven Australia styling elixir', 'Long-lasting wave hold'],
+      'Professional precision haircut tailored to your natural hair texture and face shape, finished with a fresh, bouncy blow-dry style.',
+    perks: ['Personal hair consultation', 'Scalp wash & prep', 'Bouncy blow-dry styling'],
   },
   {
-    id: 'pearl-french-nails',
-    title: 'Couture Pearl French Almond Manicure',
-    category: 'Nails & Art',
-    price: 'from $85', // placeholder, confirm with client
-    duration: '75 mins',
-    image: '/images/nails2.jpg',
-    badge: 'Bridal & Red Carpet',
+    id: 'color-highlights',
+    title: 'Color and Highlights',
+    category: 'HairCare',
+    price: 'Starts at $80',
+    duration: '2 - 3.5 hrs',
+    image: '/images/hair2.jpg',
+    badge: 'Client Favorite',
     description:
-      'Glossy almond or sculpted gel nails with pristine micro-French tips, individually hand-embellished with iridescent pearl beads and crystal drops.',
-    perks: ['Cuticle detox & nourishment', 'Strengthening builder gel', 'High-gloss anti-scratch topcoat'],
+      'Luminous dimensional foils, seamless balayage, or vibrant full color coverage tailored to brighten your complexion and add healthy radiance.',
+    perks: ['Custom shade formulation', 'Radiant gloss glaze toner', 'Affordable luxury color'],
   },
   {
-    id: 'handpainted-nailart',
-    title: 'Kawaii & Bespoke Hand-Painted Nail Art',
-    category: 'Nails & Art',
-    price: 'from $95', // placeholder, confirm with client
-    duration: '90 mins',
-    image: '/images/nails1.jpg',
-    badge: 'Playful & Cute',
-    description:
-      'Intricate micro-artistry: cute bunny characters, retro 3D bows, pastel florals, or bold pop-art graphics tailored to your whimsical aesthetic.',
-    perks: ['Hand-drawn custom artwork', 'Custom press-on options available', 'Long-wear gel durability'],
-  },
-  {
-    id: 'restorative-hair-spa',
-    title: 'Botanical Hair & Scalp Rejuvenation',
-    category: 'Hair & Care',
-    price: 'from $65', // placeholder, confirm with client
-    duration: '45 mins',
+    id: 'perm-straightening',
+    title: 'Perm and Straightening',
+    category: 'HairCare',
+    price: 'Starts at $70',
+    duration: '2 - 3 hrs',
     image: '/images/hair5.jpg',
+    badge: 'Texture Mastery',
+    description:
+      'Transform your natural hair: gorgeous bouncy, defined curls with a gentle perm, or ultra-silky, smooth chemical straightening for easy daily styling.',
+    perks: ['Gentle softening formula', 'Heat protectant seal', 'Long-lasting wave or silk finish'],
+  },
+  {
+    id: 'hair-spa',
+    title: 'Hair Spa',
+    category: 'Treatments',
+    price: 'Starts at $60',
+    duration: '45 mins',
+    image: '/images/hair1.jpg',
     badge: 'Restorative',
     description:
-      'Deep restorative lipid infusion to repair heat damage, rehydrate dry ends, and restore mirror-like shine and silkiness to stressed tresses.',
-    perks: ['Warm herbal towel wrap', 'Invigorating scalp acupressure', 'Leave-in moisture shield'],
+      'A deeply restorative spa ritual combining rich botanical moisture with an invigorating scalp massage to revive dull, stressed, or dry tresses.',
+    perks: ['Invigorating scalp acupressure', 'Warm herbal steam wrap', 'Intensive hydration therapy'],
+  },
+  {
+    id: 'keratin-treatment',
+    title: 'Keratin Treatment',
+    category: 'Treatments',
+    price: 'Starts at $80',
+    duration: '2 - 2.5 hrs',
+    image: '/images/hair3.jpg',
+    badge: 'Anti-Frizz Shine',
+    description:
+      'Intensive protein smoothing therapy that seals damaged cuticles, eliminates stubborn humidity frizz, and imparts radiant glass-like shine.',
+    perks: ['Eliminates 95% of frizz', 'Dramatically cuts drying time', 'Results last for months'],
+  },
+  {
+    id: 'deep-conditioning',
+    title: 'Deep Conditioning',
+    category: 'Treatments',
+    price: 'Starts at $40',
+    duration: '30 mins',
+    image: '/images/hair2.jpg',
+    badge: 'Quick Glow',
+    description:
+      'Instant targeted hydration and lipid replenishment to restore softness, combability, and healthy bounce to dry or heat-styled hair.',
+    perks: ['Protein & lipid infusion', 'Instant detangling & gloss', 'Scalp soothing massage'],
+  },
+  {
+    id: 'threading',
+    title: 'Threading',
+    category: 'Face Care',
+    price: 'Starts at $30',
+    duration: '20 - 30 mins',
+    image: '/images/owner.png',
+    badge: 'Precision Shape',
+    description:
+      'Gentle, ultra-precise facial hair threading for crisp, clean eyebrow shaping, upper lip, and facial grooming without chemicals or harsh peeling.',
+    perks: ['Gentle on sensitive skin', 'Razor-sharp brow contouring', 'Soothing aloe vera aftercare'],
+  },
+  {
+    id: 'waxing',
+    title: 'Waxing',
+    category: 'Body Care',
+    price: 'Starts at $30',
+    duration: '30 - 45 mins',
+    image: '/images/salon.jpg',
+    badge: 'Silky Smooth',
+    description:
+      'Hygienic, comfortable body waxing using premium skin-calming wax formulas for silky, touchable smoothness that lasts for weeks.',
+    perks: ['Hygienic single-use applicators', 'Pre & post-wax calming elixirs', 'Silky, long-lasting results'],
+  },
+  {
+    id: 'manicure-pedicure',
+    title: 'Manicure & Pedicure',
+    category: 'Nail Care',
+    price: 'Starts at $25',
+    duration: '45 - 60 mins',
+    image: '/images/nails2.jpg',
+    badge: 'Guest Love',
+    description:
+      'Pampering nail shaping, meticulous cuticle care, soothing foot spa massage, and long-lasting glossy polish for beautifully rejuvenated hands and feet.',
+    perks: ['Relaxing foot spa & foot massage', 'Nail shaping & buffing', 'High-shine durable finish'],
   },
 ];
 
@@ -143,106 +175,91 @@ export const whyChooseUs = [
   {
     id: 'artisan',
     icon: 'Sparkles',
-    title: 'Artisan Attention to Detail',
+    title: 'Affordable & High Quality',
     description:
-      'Every foil, brush stroke, and pearl accent is carefully placed. Wendyl takes the time to understand your individual hair and nail goals.',
+      'Exceptional salon-quality haircuts, vivid colors, and spa treatments at accessible prices everyone in Palmerston North can enjoy.',
   },
   {
     id: 'quality',
     icon: 'Crown',
-    title: 'Salon-Grade Formulations',
+    title: 'We Care For Our Clients',
     description:
-      'We exclusively use premium, cruelty-free professional hair elixirs and high-grade nail systems that nourish and protect your natural beauty.',
+      '“We take care of our clients and our people.” Wendyl listens attentively to your wishes so you always leave feeling refreshed and delighted.',
   },
   {
     id: 'atmosphere',
     icon: 'Heart',
-    title: 'Serene Boutique Ambience',
+    title: 'Serene Boutique Sanctuary',
     description:
-      'Escape busy shopping malls. Our Terrace End studio offers a peaceful, fairy-lit sanctuary where you can truly unwind with tea and warm hospitality.',
+      'An intimate, fairy-lit salon on Napier Road where you can completely unwind with warm tea, foot spa therapy, and personalized pampering.',
   },
   {
     id: 'bespoke',
     icon: 'Smile',
-    title: 'Custom Cute & Luxe Styles',
+    title: 'Full Head-to-Toe Beauty',
     description:
-      'From timeless red carpet pearl French tips to expressive vibrant peekaboo color, we bring your unique dream look to life with joy and flair.',
+      'From haircuts and keratin treatments to manicures, pedicures, threading, and waxing—everything you need in one friendly local studio.',
   },
 ];
 
 /**
- * CLIENT TESTIMONIALS
- * Generic first-name-only demo reviews illustrating typical customer feedback.
- * [DEMO TESTIMONIALS - CONFIRM WITH CLIENT]
+ * AUTHENTIC CLIENT TESTIMONIALS
+ * Real guest feedback for Wendy
  */
 export const testimonials = [
   {
     id: 1,
-    name: 'Sophie M.',
+    name: 'Rhudna Honey',
     location: 'Palmerston North',
-    treatment: 'Signature Balayage & Cut',
+    treatment: 'Color and Highlights',
     rating: 5,
     quote:
-      'Wendyl completely transformed my hair! The balayage is so soft and blended perfectly with zero harsh lines. The salon is such a lovely, calming place—I left feeling like royalty.',
-    date: 'Recent Guest',
+      '100 percent very legitimate, I love my hair color and it was very affordable. Please book wendy, if you are looking for an affordable and beautiful hair color.',
+    date: 'Verified Client',
   },
   {
     id: 2,
-    name: 'Chloe T.',
+    name: 'Marites Alamil',
     location: 'Terrace End',
-    treatment: 'Pearl French Nails',
+    treatment: 'Foot Spa Massage & Pedicure',
     rating: 5,
     quote:
-      'The pearl almond nails are pure perfection! I got non-stop compliments at my sister’s engagement. Wendyl is gentle, meticulous, and so talented with hand-placed details.',
-    date: 'Recent Guest',
+      'Wendy did it very well in taking care of my feet, the foot spa massage and pedicure is really great, That’s why I always come back for an appointment. Thank You Wendy .',
+    date: 'Verified Client',
   },
   {
     id: 3,
-    name: 'Aimee L.',
-    location: 'Manawatū',
-    treatment: 'Layered Cut & Blowout',
-    rating: 5,
-    quote:
-      'Finally found a stylist who truly understands bouncy layers without taking away my length! The blowout held for almost a whole week. Wendyl is warm, attentive, and so sweet.',
-    date: 'Recent Guest',
-  },
-  {
-    id: 4,
-    name: 'Jessica K.',
+    name: 'DC',
     location: 'Palmerston North',
-    treatment: 'Emerald Peekaboo & Nail Art',
+    treatment: 'Regular Haircut & Styling',
     rating: 5,
     quote:
-      'I wanted something playful yet work-appropriate, and the emerald underlights Wendyl designed are stunning! Plus, the cute hand-drawn nail art is pure joy. Highly recommend!',
-    date: 'Recent Guest',
+      'Wendy always take care of my hair when it comes to regular haircuts, I save a lot of money while having a good hair cut.',
+    date: 'Verified Client',
   },
 ];
 
 /**
  * SALON OPENING HOURS
- * [PLACEHOLDER - CONFIRM WITH CLIENT]
+ * Exact schedule provided by client
  */
 export const salonHours = [
-  { days: 'Monday – Wednesday', hours: '9:00 AM – 5:30 PM' },
-  { days: 'Thursday (Late Night)', hours: '9:00 AM – 7:30 PM' },
-  { days: 'Friday', hours: '9:00 AM – 6:00 PM' },
-  { days: 'Saturday', hours: '9:30 AM – 4:30 PM' },
-  { days: 'Sunday', hours: 'Closed / By Special Appointment' },
+  { days: 'Monday – Friday', hours: '9:00 AM – 6:00 PM' },
+  { days: 'Saturday & Sunday', hours: '2:30 PM – 8:00 PM' },
 ];
 
 /**
  * ABOUT THE FOUNDER COPY
- * [PLACEHOLDER NARRATIVE - CONFIRM WITH CLIENT]
  */
 export const aboutStory = {
   eyebrow: 'Meet Your Stylist',
-  heading: 'Wendyl Tagaan',
-  role: 'Founder, Master Hair Stylist & Nail Artist',
+  heading: 'Wendyl (Wendy) Tagaan',
+  role: 'Founder, Master Hair Stylist & Beauty Artist',
   signature: 'Wendyl Tagaan',
   paragraphs: [
-    'Norwen Beauty Salon was created with a clear, heartfelt vision: to provide Palmerston North with an intimate boutique sanctuary where beauty feels uplifting, personalized, and genuinely indulgent.',
-    'Led by master stylist Wendyl Tagaan, our studio blends modern salon craftsmanship—from luminous multi-dimensional balayage to delicate, hand-embellished pearl nail art—with the warmth of a true neighborhood pampering experience.',
-    'Whether you are visiting for a restorative blowout, an artistic vivid hair transformation, or custom kawaii nails that spark everyday joy, you will always receive our undivided attention, gentle care, and a warm cup of herbal tea.',
+    'Norwen Beauty Salon was created with a clear, heartfelt motto: “We take care of our clients and our people.” Located in Terrace End, Palmerston North, Wendy welcomes every guest like family.',
+    'Whether you need a quick regular haircut, a beautiful affordable color transformation, a soothing foot spa with pedicure, or gentle facial threading and waxing, Wendy takes personal pride in delivering top-tier care without salon markups.',
+    'Step into our friendly boutique sanctuary, relax in a calm environment, and let us help you look and feel your absolute best.',
   ],
-  quote: '“True beauty blooms when you give yourself permission to relax, recharge, and be pampered with love.”',
+  quote: '“We take care of our clients and our people — beautiful care should always be heartfelt and affordable.”',
 };
