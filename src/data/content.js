@@ -10,7 +10,7 @@ export const businessDetails = {
   name: 'Norwen Beauty Salon',
   tagline: 'Where Beauty Meets Elegance',
   subheadline:
-    'Experience bespoke hair design, rich color, restorative hair spa, relaxing foot care, and gentle beauty treatments with Wendy in Terrace End, Palmerston North.',
+    'Experience bespoke hair design, rich dimensional color, restorative hair spa rituals, relaxing foot care, and gentle beauty treatments with Wendy in Terrace End, Palmerston North.',
   owner: 'Wendyl Tagaan',
   ownerNickname: 'Wendy',
   ownerRole: 'Founder & Master Stylist',
@@ -57,7 +57,7 @@ export const salonStats = [
 
 /**
  * SALON SERVICES & VERIFIED PRICING
- * Exactly as provided by client
+ * Exactly as provided by client with matching named images and human POV framing
  */
 export const salonServices = [
   {
@@ -66,7 +66,8 @@ export const salonServices = [
     category: 'HairCare',
     price: 'Starts at $25',
     duration: '45 - 60 mins',
-    image: '/images/hair4.jpg',
+    image: '/images/Haircare(Haircut and Styling).png',
+    objectPosition: 'center 25%',
     badge: 'Popular',
     description:
       'Professional precision haircut tailored to your natural hair texture and face shape, finished with a fresh, bouncy blow-dry style.',
@@ -78,7 +79,8 @@ export const salonServices = [
     category: 'HairCare',
     price: 'Starts at $80',
     duration: '2 - 3.5 hrs',
-    image: '/images/hair2.jpg',
+    image: '/images/Haircare(Color and Highlights).png',
+    objectPosition: 'center 30%',
     badge: 'Client Favorite',
     description:
       'Luminous dimensional foils, seamless balayage, or vibrant full color coverage tailored to brighten your complexion and add healthy radiance.',
@@ -90,7 +92,8 @@ export const salonServices = [
     category: 'HairCare',
     price: 'Starts at $70',
     duration: '2 - 3 hrs',
-    image: '/images/hair5.jpg',
+    image: '/images/Haircare(Perm and Straightening).png',
+    objectPosition: 'center 25%',
     badge: 'Texture Mastery',
     description:
       'Transform your natural hair: gorgeous bouncy, defined curls with a gentle perm, or ultra-silky, smooth chemical straightening for easy daily styling.',
@@ -102,7 +105,8 @@ export const salonServices = [
     category: 'Treatments',
     price: 'Starts at $60',
     duration: '45 mins',
-    image: '/images/hair1.jpg',
+    image: '/images/Treatments(Hair Spa).png',
+    objectPosition: 'center 35%',
     badge: 'Restorative',
     description:
       'A deeply restorative spa ritual combining rich botanical moisture with an invigorating scalp massage to revive dull, stressed, or dry tresses.',
@@ -114,7 +118,8 @@ export const salonServices = [
     category: 'Treatments',
     price: 'Starts at $80',
     duration: '2 - 2.5 hrs',
-    image: '/images/hair3.jpg',
+    image: '/images/Treatments(Keratin Treatment).png',
+    objectPosition: 'center 30%',
     badge: 'Anti-Frizz Shine',
     description:
       'Intensive protein smoothing therapy that seals damaged cuticles, eliminates stubborn humidity frizz, and imparts radiant glass-like shine.',
@@ -126,7 +131,8 @@ export const salonServices = [
     category: 'Treatments',
     price: 'Starts at $40',
     duration: '30 mins',
-    image: '/images/hair2.jpg',
+    image: '/images/Treatments(Deep Conditioning).png',
+    objectPosition: 'center 30%',
     badge: 'Quick Glow',
     description:
       'Instant targeted hydration and lipid replenishment to restore softness, combability, and healthy bounce to dry or heat-styled hair.',
@@ -138,7 +144,8 @@ export const salonServices = [
     category: 'Face Care',
     price: 'Starts at $30',
     duration: '20 - 30 mins',
-    image: '/images/owner.png',
+    image: '/images/Face Care(Threading).png',
+    objectPosition: 'center 35%',
     badge: 'Precision Shape',
     description:
       'Gentle, ultra-precise facial hair threading for crisp, clean eyebrow shaping, upper lip, and facial grooming without chemicals or harsh peeling.',
@@ -150,7 +157,8 @@ export const salonServices = [
     category: 'Body Care',
     price: 'Starts at $30',
     duration: '30 - 45 mins',
-    image: '/images/salon.jpg',
+    image: '/images/BodyCare(waxing).png',
+    objectPosition: 'center 35%',
     badge: 'Silky Smooth',
     description:
       'Hygienic, comfortable body waxing using premium skin-calming wax formulas for silky, touchable smoothness that lasts for weeks.',
@@ -162,7 +170,8 @@ export const salonServices = [
     category: 'Nail Care',
     price: 'Starts at $25',
     duration: '45 - 60 mins',
-    image: '/images/nails2.jpg',
+    image: '/images/NailCare(Manicure & Pedicure).jpeg',
+    objectPosition: 'center 40%',
     badge: 'Guest Love',
     description:
       'Pampering nail shaping, meticulous cuticle care, soothing foot spa massage, and long-lasting glossy polish for beautifully rejuvenated hands and feet.',
@@ -204,7 +213,7 @@ export const whyChooseUs = [
 
 /**
  * AUTHENTIC CLIENT TESTIMONIALS
- * Real guest feedback for Wendy
+ * Real verified guest feedback for Wendy with proof screenshot images
  */
 export const testimonials = [
   {
@@ -216,6 +225,7 @@ export const testimonials = [
     quote:
       '100 percent very legitimate, I love my hair color and it was very affordable. Please book wendy, if you are looking for an affordable and beautiful hair color.',
     date: 'Verified Client',
+    proofImage: '/images/testimonials/Rhudna Honey.png',
   },
   {
     id: 2,
@@ -226,6 +236,7 @@ export const testimonials = [
     quote:
       'Wendy did it very well in taking care of my feet, the foot spa massage and pedicure is really great, That’s why I always come back for an appointment. Thank You Wendy .',
     date: 'Verified Client',
+    proofImage: '/images/testimonials/Marites Alamil.png',
   },
   {
     id: 3,
@@ -236,6 +247,7 @@ export const testimonials = [
     quote:
       'Wendy always take care of my hair when it comes to regular haircuts, I save a lot of money while having a good hair cut.',
     date: 'Verified Client',
+    proofImage: '/images/testimonials/DC.png',
   },
 ];
 

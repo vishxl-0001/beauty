@@ -66,14 +66,15 @@
       "category": "HairCare",
       "price": "Starts at $25",
       "duration": "45 - 60 mins",
-      "image": "/images/hair4.jpg",
+      "image": "/images/Haircare(Haircut and Styling).png",
       "badge": "Popular",
       "description": "Professional precision haircut tailored to your natural hair texture and face shape, finished with a fresh, bouncy blow-dry style.",
       "perks": [
         "Personal hair consultation",
         "Scalp wash & prep",
         "Bouncy blow-dry styling"
-      ]
+      ],
+      "objectPosition": "center 25%"
     },
     {
       "id": "color-highlights",
@@ -81,14 +82,15 @@
       "category": "HairCare",
       "price": "Starts at $80",
       "duration": "2 - 3.5 hrs",
-      "image": "/images/hair2.jpg",
+      "image": "/images/Haircare(Color and Highlights).png",
       "badge": "Client Favorite",
       "description": "Luminous dimensional foils, seamless balayage, or vibrant full color coverage tailored to brighten your complexion and add healthy radiance.",
       "perks": [
         "Custom shade formulation",
         "Radiant gloss glaze toner",
         "Affordable luxury color"
-      ]
+      ],
+      "objectPosition": "center 30%"
     },
     {
       "id": "perm-straightening",
@@ -96,14 +98,15 @@
       "category": "HairCare",
       "price": "Starts at $70",
       "duration": "2 - 3 hrs",
-      "image": "/images/hair5.jpg",
+      "image": "/images/Haircare(Perm and Straightening).png",
       "badge": "Texture Mastery",
       "description": "Transform your natural hair: gorgeous bouncy, defined curls with a gentle perm, or ultra-silky, smooth chemical straightening for easy daily styling.",
       "perks": [
         "Gentle softening formula",
         "Heat protectant seal",
         "Long-lasting wave or silk finish"
-      ]
+      ],
+      "objectPosition": "center 25%"
     },
     {
       "id": "hair-spa",
@@ -111,14 +114,15 @@
       "category": "Treatments",
       "price": "Starts at $60",
       "duration": "45 mins",
-      "image": "/images/hair1.jpg",
+      "image": "/images/Treatments(Hair Spa).png",
       "badge": "Restorative",
       "description": "A deeply restorative spa ritual combining rich botanical moisture with an invigorating scalp massage to revive dull, stressed, or dry tresses.",
       "perks": [
         "Invigorating scalp acupressure",
         "Warm herbal steam wrap",
         "Intensive hydration therapy"
-      ]
+      ],
+      "objectPosition": "center 35%"
     },
     {
       "id": "keratin-treatment",
@@ -126,14 +130,15 @@
       "category": "Treatments",
       "price": "Starts at $80",
       "duration": "2 - 2.5 hrs",
-      "image": "/images/hair3.jpg",
+      "image": "/images/Treatments(Keratin Treatment).png",
       "badge": "Anti-Frizz Shine",
       "description": "Intensive protein smoothing therapy that seals damaged cuticles, eliminates stubborn humidity frizz, and imparts radiant glass-like shine.",
       "perks": [
         "Eliminates 95% of frizz",
         "Dramatically cuts drying time",
         "Results last for months"
-      ]
+      ],
+      "objectPosition": "center 30%"
     },
     {
       "id": "deep-conditioning",
@@ -141,14 +146,15 @@
       "category": "Treatments",
       "price": "Starts at $40",
       "duration": "30 mins",
-      "image": "/images/hair2.jpg",
+      "image": "/images/Treatments(Deep Conditioning).png",
       "badge": "Quick Glow",
       "description": "Instant targeted hydration and lipid replenishment to restore softness, combability, and healthy bounce to dry or heat-styled hair.",
       "perks": [
         "Protein & lipid infusion",
         "Instant detangling & gloss",
         "Scalp soothing massage"
-      ]
+      ],
+      "objectPosition": "center 30%"
     },
     {
       "id": "threading",
@@ -156,14 +162,15 @@
       "category": "Face Care",
       "price": "Starts at $30",
       "duration": "20 - 30 mins",
-      "image": "/images/owner.png",
+      "image": "/images/Face Care(Threading).png",
       "badge": "Precision Shape",
       "description": "Gentle, ultra-precise facial hair threading for crisp, clean eyebrow shaping, upper lip, and facial grooming without chemicals or harsh peeling.",
       "perks": [
         "Gentle on sensitive skin",
         "Razor-sharp brow contouring",
         "Soothing aloe vera aftercare"
-      ]
+      ],
+      "objectPosition": "center 35%"
     },
     {
       "id": "waxing",
@@ -171,14 +178,15 @@
       "category": "Body Care",
       "price": "Starts at $30",
       "duration": "30 - 45 mins",
-      "image": "/images/salon.jpg",
+      "image": "/images/BodyCare(waxing).png",
       "badge": "Silky Smooth",
       "description": "Hygienic, comfortable body waxing using premium skin-calming wax formulas for silky, touchable smoothness that lasts for weeks.",
       "perks": [
         "Hygienic single-use applicators",
         "Pre & post-wax calming elixirs",
         "Silky, long-lasting results"
-      ]
+      ],
+      "objectPosition": "center 35%"
     },
     {
       "id": "manicure-pedicure",
@@ -186,14 +194,15 @@
       "category": "Nail Care",
       "price": "Starts at $25",
       "duration": "45 - 60 mins",
-      "image": "/images/nails2.jpg",
+      "image": "/images/NailCare(Manicure & Pedicure).jpeg",
       "badge": "Guest Love",
       "description": "Pampering nail shaping, meticulous cuticle care, soothing foot spa massage, and long-lasting glossy polish for beautifully rejuvenated hands and feet.",
       "perks": [
         "Relaxing foot spa & foot massage",
         "Nail shaping & buffing",
         "High-shine durable finish"
-      ]
+      ],
+      "objectPosition": "center 40%"
     }
   ],
   "gallery": [
@@ -316,7 +325,8 @@
       "treatment": "Color and Highlights",
       "rating": 5,
       "quote": "100 percent very legitimate, I love my hair color and it was very affordable. Please book wendy, if you are looking for an affordable and beautiful hair color",
-      "date": "Verified Client"
+      "date": "Verified Client",
+      "proofImage": "/images/testimonials/Rhudna Honey.png"
     },
     {
       "id": 2,
@@ -325,7 +335,8 @@
       "treatment": "Foot Spa Massage & Pedicure",
       "rating": 5,
       "quote": "Wendy did it very well in taking care of my feet, the foot spa massage and pedicure is really great,That’s why I always come back for an appointment. Thank You Wendy .",
-      "date": "Verified Client"
+      "date": "Verified Client",
+      "proofImage": "/images/testimonials/Marites Alamil.png"
     },
     {
       "id": 3,
@@ -334,7 +345,8 @@
       "treatment": "Regular Haircut & Styling",
       "rating": 5,
       "quote": "Wendy always take care of my hair when it comes to regular haircuts, I save a lot of money while having a good hair cut",
-      "date": "Verified Client"
+      "date": "Verified Client",
+      "proofImage": "/images/testimonials/DC.png"
     }
   ],
   "bookings": [

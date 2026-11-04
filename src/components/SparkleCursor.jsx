@@ -21,7 +21,7 @@ export default function SparkleCursor() {
       if (now - lastTime < 45) return;
       lastTime = now;
 
-      const colors = ['#E65D73', '#C9A24B', '#F8A5B2', '#D9A58B'];
+      const colors = ['#D4AF37', '#C9A24B', '#E6C36E', '#B38728'];
       const newSparkle = {
         id: Math.random().toString(36).slice(2, 7),
         x: e.clientX,

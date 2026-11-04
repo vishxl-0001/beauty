@@ -38,8 +38,8 @@ export default function FloatingParticles() {
             <svg
               viewBox="0 0 24 24"
               fill="none"
-              className="w-full h-full text-[#F8A5B2]/40"
-              style={{ filter: 'drop-shadow(0 2px 4px rgba(230,93,115,0.15))' }}
+              className="w-full h-full text-[#E6C36E]/40"
+              style={{ filter: 'drop-shadow(0 2px 4px rgba(201,162,75,0.2))' }}
             >
               <path
                 d="M12 2C7 6 5 11 6 15C7 19 10 21 12 21C14 21 17 19 18 15C19 11 17 6 12 2Z"

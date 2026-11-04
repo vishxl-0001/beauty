@@ -58,7 +58,7 @@ const initialData = {
     "category": "HairCare",
     "price": "Starts at $25",
     "duration": "45 - 60 mins",
-    "image": "/images/hair4.jpg",
+    "image": "/images/Haircare(Haircut and Styling).png",
     "badge": "Popular",
     "description": "Professional precision haircut tailored to your natural hair texture and face shape, finished with a fresh, bouncy blow-dry style.",
     "perks": [
@@ -73,7 +73,7 @@ const initialData = {
     "category": "HairCare",
     "price": "Starts at $80",
     "duration": "2 - 3.5 hrs",
-    "image": "/images/hair2.jpg",
+    "image": "/images/Haircare(Color and Highlights).png",
     "badge": "Client Favorite",
     "description": "Luminous dimensional foils, seamless balayage, or vibrant full color coverage tailored to brighten your complexion and add healthy radiance.",
     "perks": [
@@ -88,7 +88,7 @@ const initialData = {
     "category": "HairCare",
     "price": "Starts at $70",
     "duration": "2 - 3 hrs",
-    "image": "/images/hair5.jpg",
+    "image": "/images/Haircare(Perm and Straightening).png",
     "badge": "Texture Mastery",
     "description": "Transform your natural hair: gorgeous bouncy, defined curls with a gentle perm, or ultra-silky, smooth chemical straightening for easy daily styling.",
     "perks": [
@@ -103,7 +103,7 @@ const initialData = {
     "category": "Treatments",
     "price": "Starts at $60",
     "duration": "45 mins",
-    "image": "/images/hair1.jpg",
+    "image": "/images/Treatments(Hair Spa).png",
     "badge": "Restorative",
     "description": "A deeply restorative spa ritual combining rich botanical moisture with an invigorating scalp massage to revive dull, stressed, or dry tresses.",
     "perks": [
@@ -118,7 +118,7 @@ const initialData = {
     "category": "Treatments",
     "price": "Starts at $80",
     "duration": "2 - 2.5 hrs",
-    "image": "/images/hair3.jpg",
+    "image": "/images/Treatments(Keratin Treatment).png",
     "badge": "Anti-Frizz Shine",
     "description": "Intensive protein smoothing therapy that seals damaged cuticles, eliminates stubborn humidity frizz, and imparts radiant glass-like shine.",
     "perks": [
@@ -148,7 +148,7 @@ const initialData = {
     "category": "Face Care",
     "price": "Starts at $30",
     "duration": "20 - 30 mins",
-    "image": "/images/owner.png",
+    "image": "/images/Face Care(Threading).png",
     "badge": "Precision Shape",
     "description": "Gentle, ultra-precise facial hair threading for crisp, clean eyebrow shaping, upper lip, and facial grooming without chemicals or harsh peeling.",
     "perks": [
@@ -163,7 +163,7 @@ const initialData = {
     "category": "Body Care",
     "price": "Starts at $30",
     "duration": "30 - 45 mins",
-    "image": "/images/salon.jpg",
+    "image": "/images/BodyCare(waxing).png",
     "badge": "Silky Smooth",
     "description": "Hygienic, comfortable body waxing using premium skin-calming wax formulas for silky, touchable smoothness that lasts for weeks.",
     "perks": [
@@ -178,7 +178,7 @@ const initialData = {
     "category": "Nail Care",
     "price": "Starts at $25",
     "duration": "45 - 60 mins",
-    "image": "/images/nails2.jpg",
+    "image": "/images/NailCare(Manicure & Pedicure).jpeg",
     "badge": "Guest Love",
     "description": "Pampering nail shaping, meticulous cuticle care, soothing foot spa massage, and long-lasting glossy polish for beautifully rejuvenated hands and feet.",
     "perks": [

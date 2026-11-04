@@ -39,7 +39,7 @@ export default function Footer({ onBookClick, onOpenAdmin }) {
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#C9A24B]/50 to-transparent" />
 
       {/* Ambient background glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-[#E65D73]/10 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-[#C9A24B]/10 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/10">
@@ -53,7 +53,7 @@ export default function Footer({ onBookClick, onOpenAdmin }) {
                 <h3 className="font-display text-2xl font-semibold tracking-wide">
                   {businessDetails.name}
                 </h3>
-                <p className="text-xs uppercase tracking-widest text-[#F8A5B2]">
+                <p className="text-xs uppercase tracking-widest text-[#E6C36E]">
                   Palmerston North • New Zealand
                 </p>
               </div>
@@ -69,21 +69,21 @@ export default function Footer({ onBookClick, onOpenAdmin }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#E65D73] flex items-center justify-center transition-all"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#C9A24B] flex items-center justify-center transition-all"
               >
                 <InstagramIcon className="w-4 h-4 text-white" />
               </a>
               <a
                 href={`tel:${businessDetails.phoneRaw}`}
                 aria-label="Phone"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#E65D73] flex items-center justify-center transition-all"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#C9A24B] flex items-center justify-center transition-all"
               >
                 <Phone className="w-4 h-4 text-white" />
               </a>
               <a
                 href={`mailto:${businessDetails.email}`}
                 aria-label="Email"
-                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#E65D73] flex items-center justify-center transition-all"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#C9A24B] flex items-center justify-center transition-all"
               >
                 <Mail className="w-4 h-4 text-white" />
               </a>
@@ -100,7 +100,7 @@ export default function Footer({ onBookClick, onOpenAdmin }) {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="hover:text-[#F8A5B2] transition-colors inline-block py-0.5"
+                    className="hover:text-[#E6C36E] transition-colors inline-block py-0.5"
                   >
                     {link.name}
                   </a>
@@ -115,18 +115,18 @@ export default function Footer({ onBookClick, onOpenAdmin }) {
               Studio Location
             </h4>
             <p className="text-xs sm:text-sm text-white/80 leading-relaxed flex items-start gap-2">
-              <MapPin className="w-4 h-4 text-[#E65D73] shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-[#C9A24B] shrink-0 mt-0.5" />
               <span>{businessDetails.address}</span>
             </p>
             <p className="text-xs sm:text-sm text-white/80 flex items-center gap-2">
-              <Phone className="w-4 h-4 text-[#E65D73] shrink-0" />
-              <a href={`tel:${businessDetails.phoneRaw}`} className="hover:text-[#F8A5B2]">
+              <Phone className="w-4 h-4 text-[#C9A24B] shrink-0" />
+              <a href={`tel:${businessDetails.phoneRaw}`} className="hover:text-[#E6C36E]">
                 {businessDetails.phone}
               </a>
             </p>
             <p className="text-xs sm:text-sm text-white/80 flex items-center gap-2">
-              <Mail className="w-4 h-4 text-[#E65D73] shrink-0" />
-              <a href={`mailto:${businessDetails.email}`} className="hover:text-[#F8A5B2] truncate">
+              <Mail className="w-4 h-4 text-[#C9A24B] shrink-0" />
+              <a href={`mailto:${businessDetails.email}`} className="hover:text-[#E6C36E] truncate">
                 {businessDetails.email}
               </a>
             </p>
@@ -135,7 +135,7 @@ export default function Footer({ onBookClick, onOpenAdmin }) {
               <button
                 type="button"
                 onClick={onBookClick}
-                className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#E65D73] to-[#B76E79] text-white text-xs font-semibold shadow-md hover:shadow-lg active:scale-95 transition-all flex items-center gap-2"
+                className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white text-xs font-semibold shadow-md hover:shadow-lg active:scale-95 transition-all flex items-center gap-2"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Book Appointment</span>
@@ -151,16 +151,16 @@ export default function Footer({ onBookClick, onOpenAdmin }) {
             <button
               type="button"
               onClick={onOpenAdmin}
-              className="text-white/40 hover:text-[#F8A5B2] transition-colors flex items-center gap-1"
+              className="text-white/40 hover:text-[#E6C36E] transition-colors flex items-center gap-1"
             >
               <Shield className="w-3 h-3" />
               <span>Staff Login</span>
             </button>
           </div>
 
-          <p className="flex items-center gap-1 text-[#F8A5B2]">
+          <p className="flex items-center gap-1 text-[#E6C36E]">
             <span>Crafted with</span>
-            <Heart className="w-3.5 h-3.5 fill-[#E65D73] text-[#E65D73]" />
+            <Heart className="w-3.5 h-3.5 fill-[#C9A24B] text-[#C9A24B]" />
             <span>for Wendyl Tagaan</span>
           </p>
 
@@ -184,7 +184,7 @@ export default function Footer({ onBookClick, onOpenAdmin }) {
                 cx="22"
                 cy="22"
                 r="18"
-                className="stroke-[#E65D73] fill-none transition-all duration-150"
+                className="stroke-[#C9A24B] fill-none transition-all duration-150"
                 strokeWidth="2.5"
                 strokeDasharray="113.1"
                 strokeDashoffset={113.1 - (113.1 * scrollProgress) / 100}

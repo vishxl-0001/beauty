@@ -50,9 +50,9 @@ export default function AdminLogin({ onLoginSuccess, onBackToSite }) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FFFDFB] via-[#FFF0F3] to-[#FBF5EE] flex items-center justify-center p-4 sm:p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-[#FFFDFB] via-[#FAF5EA] to-[#FBF5EE] flex items-center justify-center p-4 sm:p-6 relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#F8E1E4]/70 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#EADBBA]/70 blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#C9A24B]/15 blur-3xl pointer-events-none" />
 
       {/* Login Card */}
@@ -60,13 +60,13 @@ export default function AdminLogin({ onLoginSuccess, onBackToSite }) {
         initial={{ opacity: 0, scale: 0.94, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full max-w-md rounded-3xl glass-panel p-6 sm:p-10 border border-[#F8E1E4] shadow-2xl shadow-rose-950/10 relative z-10 bg-white/85"
+        className="w-full max-w-md rounded-3xl glass-panel p-6 sm:p-10 border border-[#EADBBA] shadow-2xl shadow-amber-950/10 relative z-10 bg-white/85"
       >
         {/* Back to site button */}
         <button
           type="button"
           onClick={onBackToSite}
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#B76E79] hover:text-[#E65D73] transition-colors mb-6 group"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8C7355] hover:text-[#C9A24B] transition-colors mb-6 group"
         >
           <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
           <span>Back to Salon Website</span>
@@ -74,19 +74,19 @@ export default function AdminLogin({ onLoginSuccess, onBackToSite }) {
 
         {/* Brand Emblem */}
         <div className="flex flex-col items-center text-center mb-8">
-          <div className="relative w-16 h-16 rounded-full p-1 bg-gradient-to-tr from-[#E65D73] via-[#F8A5B2] to-[#C9A24B] shadow-md mb-3">
+          <div className="relative w-16 h-16 rounded-full p-1 bg-gradient-to-tr from-[#C9A24B] via-[#E6C36E] to-[#C9A24B] shadow-md mb-3">
             <div className="w-full h-full rounded-full bg-white flex items-center justify-center p-2">
               <img src="/images/logo.png" alt="Norwen Logo" className="w-full h-full object-contain" />
             </div>
-            <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-[#3B2230] text-white flex items-center justify-center border-2 border-white shadow-xs">
+            <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-[#251B12] text-white flex items-center justify-center border-2 border-white shadow-xs">
               <Lock className="w-3 h-3 text-[#C9A24B]" />
             </div>
           </div>
 
-          <h1 className="font-display text-2xl sm:text-3xl font-semibold text-[#3B2230]">
+          <h1 className="font-display text-2xl sm:text-3xl font-semibold text-[#251B12]">
             Salon Management
           </h1>
-          <p className="text-xs uppercase tracking-widest text-[#B76E79] font-medium mt-1">
+          <p className="text-xs uppercase tracking-widest text-[#8C7355] font-medium mt-1">
             Norwen Beauty Salon • Palmerston North
           </p>
         </div>
@@ -106,11 +106,11 @@ export default function AdminLogin({ onLoginSuccess, onBackToSite }) {
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-[#3B2230] mb-1.5">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-[#251B12] mb-1.5">
               Admin Username
             </label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#B76E79]">
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#8C7355]">
                 <User className="w-4 h-4" />
               </div>
               <input
@@ -118,7 +118,7 @@ export default function AdminLogin({ onLoginSuccess, onBackToSite }) {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="admin"
-                className="w-full pl-10 pr-4 py-3 rounded-2xl bg-white border border-[#F8E1E4] text-sm text-[#3B2230] focus:outline-none focus:ring-2 focus:ring-[#E65D73]/30 focus:border-[#E65D73] transition-all"
+                className="w-full pl-10 pr-4 py-3 rounded-2xl bg-white border border-[#EADBBA] text-sm text-[#251B12] focus:outline-none focus:ring-2 focus:ring-[#C9A24B]/30 focus:border-[#C9A24B] transition-all"
                 autoComplete="username"
                 required
               />
@@ -126,11 +126,11 @@ export default function AdminLogin({ onLoginSuccess, onBackToSite }) {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-[#3B2230] mb-1.5">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-[#251B12] mb-1.5">
               Password
             </label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#B76E79]">
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#8C7355]">
                 <Lock className="w-4 h-4" />
               </div>
               <input
@@ -138,14 +138,14 @@ export default function AdminLogin({ onLoginSuccess, onBackToSite }) {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••••••"
-                className="w-full pl-10 pr-11 py-3 rounded-2xl bg-white border border-[#F8E1E4] text-sm text-[#3B2230] focus:outline-none focus:ring-2 focus:ring-[#E65D73]/30 focus:border-[#E65D73] transition-all"
+                className="w-full pl-10 pr-11 py-3 rounded-2xl bg-white border border-[#EADBBA] text-sm text-[#251B12] focus:outline-none focus:ring-2 focus:ring-[#C9A24B]/30 focus:border-[#C9A24B] transition-all"
                 autoComplete="current-password"
                 required
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#B76E79] hover:text-[#3B2230]"
+                className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-[#8C7355] hover:text-[#251B12]"
               >
                 {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
@@ -155,7 +155,7 @@ export default function AdminLogin({ onLoginSuccess, onBackToSite }) {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full mt-2 py-3.5 rounded-full bg-gradient-to-r from-[#E65D73] via-[#D97D8D] to-[#C9A24B] text-white font-semibold text-sm shadow-md shadow-[#E65D73]/25 hover:shadow-lg hover:shadow-[#E65D73]/35 active:scale-95 transition-all flex items-center justify-center gap-2"
+            className="w-full mt-2 py-3.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#DFB76C] to-[#B38728] text-white font-semibold text-sm shadow-md shadow-[#C9A24B]/25 hover:shadow-lg hover:shadow-[#C9A24B]/35 active:scale-95 transition-all flex items-center justify-center gap-2"
           >
             {isLoading ? (
               <span>Authenticating...</span>
@@ -169,11 +169,11 @@ export default function AdminLogin({ onLoginSuccess, onBackToSite }) {
         </form>
 
         {/* Credentials Reminder */}
-        <div className="mt-8 pt-5 border-t border-[#F8E1E4] text-center">
-          <p className="text-[11px] font-semibold text-[#B76E79] uppercase tracking-wider mb-1">
+        <div className="mt-8 pt-5 border-t border-[#EADBBA] text-center">
+          <p className="text-[11px] font-semibold text-[#8C7355] uppercase tracking-wider mb-1">
             Demo Access Credentials
           </p>
-          <div className="inline-block px-3 py-1.5 rounded-xl bg-[#FFF5F7] border border-[#F8E1E4] text-xs text-[#3B2230] font-mono">
+          <div className="inline-block px-3 py-1.5 rounded-xl bg-[#FAF5EA] border border-[#EADBBA] text-xs text-[#251B12] font-mono">
             User: <strong>admin</strong> • Pass: <strong>NorwenAdmin2026!</strong>
           </div>
         </div>

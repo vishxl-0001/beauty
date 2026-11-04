@@ -136,7 +136,7 @@ function SalonApp() {
 
   // Public Salon Website
   return (
-    <div className="relative min-h-[100dvh] overflow-x-hidden bg-[#FFFDFB] text-[#3B2230]">
+    <div className="relative min-h-[100dvh] overflow-x-hidden bg-[#FFFDF9] text-[#251B12]">
       {/* 1. Page Load Intro Preloader */}
       <Preloader />
 

@@ -362,7 +362,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
   });
 
   return (
-    <div className="min-h-screen bg-[#FDF9F6] text-[#3B2230] flex flex-col">
+    <div className="min-h-screen bg-[#FDFBF7] text-[#251B12] flex flex-col">
       {/* Toast Notification */}
       <AnimatePresence>
         {toast && (
@@ -373,7 +373,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
             className={`fixed top-4 right-4 z-50 px-4 py-3 rounded-2xl shadow-xl flex items-center gap-2.5 text-xs font-semibold ${
               toast.type === 'error'
                 ? 'bg-red-500 text-white'
-                : 'bg-[#3B2230] text-white border border-[#C9A24B]'
+                : 'bg-[#251B12] text-white border border-[#C9A24B]'
             }`}
           >
             <Sparkles className="w-4 h-4 text-[#C9A24B]" />
@@ -383,23 +383,23 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
       </AnimatePresence>
 
       {/* Top Admin Navbar */}
-      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-[#F8E1E4] px-4 sm:px-8 py-3.5 flex items-center justify-between">
+      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-[#EADBBA] px-4 sm:px-8 py-3.5 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full p-0.5 bg-gradient-to-tr from-[#E65D73] to-[#C9A24B]">
+          <div className="w-10 h-10 rounded-full p-0.5 bg-gradient-to-tr from-[#C9A24B] to-[#C9A24B]">
             <div className="w-full h-full rounded-full bg-white flex items-center justify-center p-1">
               <img src="/images/logo.png" alt="Norwen" className="w-full h-full object-contain" />
             </div>
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="font-display font-semibold text-lg sm:text-xl text-[#3B2230] leading-none">
+              <h1 className="font-display font-semibold text-lg sm:text-xl text-[#251B12] leading-none">
                 Norwen Admin Panel
               </h1>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#FFF0F3] text-[#E65D73] border border-[#F8E1E4]">
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#FAF5EA] text-[#C9A24B] border border-[#EADBBA]">
                 Live Control
               </span>
             </div>
-            <p className="text-[11px] text-[#B76E79]">Logged in as Wendyl Tagaan</p>
+            <p className="text-[11px] text-[#8C7355]">Logged in as Wendyl Tagaan</p>
           </div>
         </div>
 
@@ -408,7 +408,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
             type="button"
             onClick={fetchData}
             title="Refresh live data"
-            className="p-2 rounded-xl bg-white border border-[#F8E1E4] text-[#3B2230] hover:text-[#E65D73] hover:border-[#E65D73] transition-colors shadow-2xs"
+            className="p-2 rounded-xl bg-white border border-[#EADBBA] text-[#251B12] hover:text-[#C9A24B] hover:border-[#C9A24B] transition-colors shadow-2xs"
           >
             <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} />
           </button>
@@ -416,9 +416,9 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
           <button
             type="button"
             onClick={onBackToSite}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-[#F8E1E4] text-xs font-semibold text-[#3B2230] hover:border-[#E65D73] transition-all shadow-2xs"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-[#EADBBA] text-xs font-semibold text-[#251B12] hover:border-[#C9A24B] transition-all shadow-2xs"
           >
-            <Eye className="w-3.5 h-3.5 text-[#E65D73]" />
+            <Eye className="w-3.5 h-3.5 text-[#C9A24B]" />
             <span className="hidden sm:inline">View Website</span>
           </button>
 
@@ -436,20 +436,20 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
       {/* Main Admin Body */}
       <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full">
         {/* Navigation Tabs Bar */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 border-b border-[#F8E1E4] mb-8">
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 border-b border-[#EADBBA] mb-8">
           <button
             type="button"
             onClick={() => setActiveTab('bookings')}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
               activeTab === 'bookings'
-                ? 'bg-gradient-to-r from-[#E65D73] to-[#B76E79] text-white shadow-md shadow-[#E65D73]/20'
-                : 'bg-white text-[#3B2230] hover:bg-[#FFF5F7] border border-[#F8E1E4]'
+                ? 'bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white shadow-md shadow-[#C9A24B]/20'
+                : 'bg-white text-[#251B12] hover:bg-[#FAF5EA] border border-[#EADBBA]'
             }`}
           >
             <Calendar className="w-4 h-4" />
             <span>Bookings & Inquiries</span>
             {pendingCount > 0 && (
-              <span className="w-5 h-5 rounded-full bg-white text-[#E65D73] font-bold text-[10px] flex items-center justify-center">
+              <span className="w-5 h-5 rounded-full bg-white text-[#C9A24B] font-bold text-[10px] flex items-center justify-center">
                 {pendingCount}
               </span>
             )}
@@ -460,8 +460,8 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
             onClick={() => setActiveTab('services')}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
               activeTab === 'services'
-                ? 'bg-gradient-to-r from-[#E65D73] to-[#B76E79] text-white shadow-md shadow-[#E65D73]/20'
-                : 'bg-white text-[#3B2230] hover:bg-[#FFF5F7] border border-[#F8E1E4]'
+                ? 'bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white shadow-md shadow-[#C9A24B]/20'
+                : 'bg-white text-[#251B12] hover:bg-[#FAF5EA] border border-[#EADBBA]'
             }`}
           >
             <DollarSign className="w-4 h-4" />
@@ -476,8 +476,8 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
             onClick={() => setActiveTab('gallery')}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
               activeTab === 'gallery'
-                ? 'bg-gradient-to-r from-[#E65D73] to-[#B76E79] text-white shadow-md shadow-[#E65D73]/20'
-                : 'bg-white text-[#3B2230] hover:bg-[#FFF5F7] border border-[#F8E1E4]'
+                ? 'bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white shadow-md shadow-[#C9A24B]/20'
+                : 'bg-white text-[#251B12] hover:bg-[#FAF5EA] border border-[#EADBBA]'
             }`}
           >
             <ImageIcon className="w-4 h-4" />
@@ -492,8 +492,8 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
             onClick={() => setActiveTab('settings')}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
               activeTab === 'settings'
-                ? 'bg-gradient-to-r from-[#E65D73] to-[#B76E79] text-white shadow-md shadow-[#E65D73]/20'
-                : 'bg-white text-[#3B2230] hover:bg-[#FFF5F7] border border-[#F8E1E4]'
+                ? 'bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white shadow-md shadow-[#C9A24B]/20'
+                : 'bg-white text-[#251B12] hover:bg-[#FAF5EA] border border-[#EADBBA]'
             }`}
           >
             <Settings className="w-4 h-4" />
@@ -516,8 +516,8 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                     onClick={() => setBookingFilter(filter)}
                     className={`px-3 py-1.5 rounded-xl text-xs font-semibold capitalize transition-all ${
                       bookingFilter === filter
-                        ? 'bg-[#3B2230] text-white'
-                        : 'bg-white border border-[#F8E1E4] text-[#3B2230] hover:bg-[#FFF5F7]'
+                        ? 'bg-[#251B12] text-white'
+                        : 'bg-white border border-[#EADBBA] text-[#251B12] hover:bg-[#FAF5EA]'
                     }`}
                   >
                     {filter}
@@ -526,25 +526,25 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
               </div>
 
               <div className="relative">
-                <Search className="w-4 h-4 text-[#B76E79] absolute left-3 top-1/2 -translate-y-1/2" />
+                <Search className="w-4 h-4 text-[#8C7355] absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
                   value={bookingSearch}
                   onChange={(e) => setBookingSearch(e.target.value)}
                   placeholder="Search guest or phone..."
-                  className="pl-9 pr-4 py-2 rounded-xl bg-white border border-[#F8E1E4] text-xs text-[#3B2230] focus:outline-none focus:ring-2 focus:ring-[#E65D73]/30 w-full sm:w-60"
+                  className="pl-9 pr-4 py-2 rounded-xl bg-white border border-[#EADBBA] text-xs text-[#251B12] focus:outline-none focus:ring-2 focus:ring-[#C9A24B]/30 w-full sm:w-60"
                 />
               </div>
             </div>
 
             {/* Bookings List */}
             {filteredBookings.length === 0 ? (
-              <div className="text-center py-16 bg-white rounded-3xl border border-[#F8E1E4]">
-                <Calendar className="w-12 h-12 text-[#B76E79]/40 mx-auto mb-3" />
-                <h3 className="font-display text-xl font-semibold text-[#3B2230]">
+              <div className="text-center py-16 bg-white rounded-3xl border border-[#EADBBA]">
+                <Calendar className="w-12 h-12 text-[#8C7355]/40 mx-auto mb-3" />
+                <h3 className="font-display text-xl font-semibold text-[#251B12]">
                   No Bookings Found
                 </h3>
-                <p className="text-xs text-[#B76E79] mt-1">
+                <p className="text-xs text-[#8C7355] mt-1">
                   Inquiries submitted from the website booking form will appear here in real-time.
                 </p>
               </div>
@@ -553,7 +553,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                 {filteredBookings.map((b) => (
                   <div
                     key={b.id}
-                    className="p-5 rounded-3xl bg-white border border-[#F8E1E4] shadow-xs flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow"
+                    className="p-5 rounded-3xl bg-white border border-[#EADBBA] shadow-xs flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow"
                   >
                     <div>
                       {/* Status header */}
@@ -571,25 +571,25 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                         >
                           {b.status}
                         </span>
-                        <span className="text-[11px] text-[#B76E79]">
+                        <span className="text-[11px] text-[#8C7355]">
                           {new Date(b.createdAt).toLocaleDateString()}
                         </span>
                       </div>
 
                       {/* Guest name & treatment */}
-                      <h3 className="font-display text-xl font-semibold text-[#3B2230]">
+                      <h3 className="font-display text-xl font-semibold text-[#251B12]">
                         {b.fullName}
                       </h3>
-                      <p className="text-xs font-semibold text-[#E65D73] mt-0.5">{b.service}</p>
+                      <p className="text-xs font-semibold text-[#C9A24B] mt-0.5">{b.service}</p>
 
                       {/* Date & Time */}
-                      <div className="flex items-center gap-3 mt-3 text-xs text-[#3B2230]/80">
+                      <div className="flex items-center gap-3 mt-3 text-xs text-[#251B12]/80">
                         <div className="flex items-center gap-1 font-medium">
-                          <Calendar className="w-3.5 h-3.5 text-[#B76E79]" />
+                          <Calendar className="w-3.5 h-3.5 text-[#8C7355]" />
                           <span>{b.date}</span>
                         </div>
                         <div className="flex items-center gap-1 font-medium">
-                          <Clock className="w-3.5 h-3.5 text-[#B76E79]" />
+                          <Clock className="w-3.5 h-3.5 text-[#8C7355]" />
                           <span>{b.timeSlot}</span>
                         </div>
                       </div>
@@ -598,30 +598,30 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                       <div className="flex flex-wrap items-center gap-3 mt-2 text-xs">
                         <a
                           href={`tel:${b.phone}`}
-                          className="flex items-center gap-1 text-[#3B2230] hover:text-[#E65D73] font-medium"
+                          className="flex items-center gap-1 text-[#251B12] hover:text-[#C9A24B] font-medium"
                         >
-                          <Phone className="w-3.5 h-3.5 text-[#E65D73]" />
+                          <Phone className="w-3.5 h-3.5 text-[#C9A24B]" />
                           <span>{b.phone}</span>
                         </a>
                         <a
                           href={`mailto:${b.email}`}
-                          className="flex items-center gap-1 text-[#3B2230] hover:text-[#E65D73]"
+                          className="flex items-center gap-1 text-[#251B12] hover:text-[#C9A24B]"
                         >
-                          <Mail className="w-3.5 h-3.5 text-[#E65D73]" />
+                          <Mail className="w-3.5 h-3.5 text-[#C9A24B]" />
                           <span>{b.email}</span>
                         </a>
                       </div>
 
                       {/* Notes if any */}
                       {b.notes && (
-                        <div className="mt-3 p-2.5 rounded-xl bg-[#FFF9FA] border border-[#F8E1E4] text-xs text-[#3B2230]/80">
-                          <strong className="text-[#3B2230]">Note:</strong> {b.notes}
+                        <div className="mt-3 p-2.5 rounded-xl bg-[#FAF7EE] border border-[#EADBBA] text-xs text-[#251B12]/80">
+                          <strong className="text-[#251B12]">Note:</strong> {b.notes}
                         </div>
                       )}
                     </div>
 
                     {/* Actions Row */}
-                    <div className="pt-3 border-t border-[#F8E1E4] flex items-center justify-between gap-2">
+                    <div className="pt-3 border-t border-[#EADBBA] flex items-center justify-between gap-2">
                       <div className="flex items-center gap-1.5">
                         {b.status !== 'confirmed' && (
                           <button
@@ -675,10 +675,10 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="font-display text-2xl font-semibold text-[#3B2230]">
+                <h2 className="font-display text-2xl font-semibold text-[#251B12]">
                   Services & Menu Pricing
                 </h2>
-                <p className="text-xs text-[#B76E79]">
+                <p className="text-xs text-[#8C7355]">
                   Update starting prices, descriptions, and duration shown on the website.
                 </p>
               </div>
@@ -686,7 +686,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
               <button
                 type="button"
                 onClick={() => setIsAddingService(true)}
-                className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#E65D73] to-[#B76E79] text-white text-xs font-semibold shadow-sm flex items-center gap-1.5"
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white text-xs font-semibold shadow-sm flex items-center gap-1.5"
               >
                 <Plus className="w-4 h-4" />
                 <span>Add Service</span>
@@ -698,10 +698,10 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
               {services.map((svc) => (
                 <div
                   key={svc.id}
-                  className="rounded-3xl bg-white border border-[#F8E1E4] p-5 shadow-xs flex flex-col justify-between"
+                  className="rounded-3xl bg-white border border-[#EADBBA] p-5 shadow-xs flex flex-col justify-between"
                 >
                   <div>
-                    <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-3 bg-[#F8E1E4]/30">
+                    <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-3 bg-[#EADBBA]/30">
                       <img src={svc.image} alt={svc.title} className="w-full h-full object-cover" />
                       <span className="absolute top-2 left-2 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-white bg-black/60">
                         {svc.badge}
@@ -709,32 +709,32 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                     </div>
 
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-[10px] font-bold text-[#B76E79] uppercase">
+                      <span className="text-[10px] font-bold text-[#8C7355] uppercase">
                         {svc.category}
                       </span>
-                      <span className="font-display font-bold text-lg text-[#E65D73]">
+                      <span className="font-display font-bold text-lg text-[#C9A24B]">
                         {svc.price}
                       </span>
                     </div>
 
-                    <h3 className="font-display font-semibold text-lg text-[#3B2230] leading-snug">
+                    <h3 className="font-display font-semibold text-lg text-[#251B12] leading-snug">
                       {svc.title}
                     </h3>
 
-                    <p className="text-xs text-[#3B2230]/75 line-clamp-2 mt-1">
+                    <p className="text-xs text-[#251B12]/75 line-clamp-2 mt-1">
                       {svc.description}
                     </p>
 
-                    <div className="mt-3 pt-2 border-t border-[#F8E1E4] text-[11px] text-[#B76E79]">
+                    <div className="mt-3 pt-2 border-t border-[#EADBBA] text-[11px] text-[#8C7355]">
                       ⏱ Duration: <strong>{svc.duration}</strong>
                     </div>
                   </div>
 
-                  <div className="pt-4 mt-4 border-t border-[#F8E1E4] flex items-center justify-between">
+                  <div className="pt-4 mt-4 border-t border-[#EADBBA] flex items-center justify-between">
                     <button
                       type="button"
                       onClick={() => setEditingService(svc)}
-                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-[#FFF5F7] text-xs font-semibold text-[#E65D73] hover:bg-[#FFF0F3]"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-[#FAF5EA] text-xs font-semibold text-[#C9A24B] hover:bg-[#FAF5EA]"
                     >
                       <Edit2 className="w-3.5 h-3.5" />
                       <span>Edit Price & Info</span>
@@ -762,10 +762,10 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="font-display text-2xl font-semibold text-[#3B2230]">
+                <h2 className="font-display text-2xl font-semibold text-[#251B12]">
                   Gallery Portfolio & Photo Manager
                 </h2>
-                <p className="text-xs text-[#B76E79]">
+                <p className="text-xs text-[#8C7355]">
                   Upload new hairstyle or nail art photos from your device, or manage existing lookbook shots.
                 </p>
               </div>
@@ -773,7 +773,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
               <button
                 type="button"
                 onClick={() => setIsAddingGallery(true)}
-                className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#E65D73] to-[#B76E79] text-white text-xs font-semibold shadow-sm flex items-center gap-1.5"
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white text-xs font-semibold shadow-sm flex items-center gap-1.5"
               >
                 <Upload className="w-4 h-4" />
                 <span>Upload New Photo</span>
@@ -785,9 +785,9 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
               {gallery.map((item) => (
                 <div
                   key={item.id}
-                  className="rounded-2xl bg-white border border-[#F8E1E4] p-3 shadow-xs flex flex-col justify-between group"
+                  className="rounded-2xl bg-white border border-[#EADBBA] p-3 shadow-xs flex flex-col justify-between group"
                 >
-                  <div className="relative aspect-square rounded-xl overflow-hidden mb-2 bg-[#F8E1E4]/30">
+                  <div className="relative aspect-square rounded-xl overflow-hidden mb-2 bg-[#EADBBA]/30">
                     <img src={item.src} alt={item.title} className="w-full h-full object-cover" />
                     <span className="absolute top-2 left-2 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider text-white bg-black/60">
                       {item.categoryName}
@@ -795,16 +795,16 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                   </div>
 
                   <div>
-                    <h4 className="font-display font-semibold text-sm text-[#3B2230] leading-tight line-clamp-1">
+                    <h4 className="font-display font-semibold text-sm text-[#251B12] leading-tight line-clamp-1">
                       {item.title}
                     </h4>
-                    <p className="text-[11px] text-[#B76E79] line-clamp-1 mt-0.5">
+                    <p className="text-[11px] text-[#8C7355] line-clamp-1 mt-0.5">
                       {item.subtitle || item.badge}
                     </p>
                   </div>
 
-                  <div className="pt-2 mt-2 border-t border-[#F8E1E4] flex items-center justify-between">
-                    <span className="text-[10px] text-[#B76E79]">
+                  <div className="pt-2 mt-2 border-t border-[#EADBBA] flex items-center justify-between">
+                    <span className="text-[10px] text-[#8C7355]">
                       {item.src.startsWith('/uploads/') ? 'Custom Upload' : 'Default Asset'}
                     </span>
                     <button
@@ -829,14 +829,14 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Left Column: Business Details & Hours */}
             <form onSubmit={handleSaveSettings} className="lg:col-span-8 space-y-6">
-              <div className="p-6 rounded-3xl bg-white border border-[#F8E1E4] shadow-xs space-y-4">
-                <h3 className="font-display text-xl font-semibold text-[#3B2230] mb-2">
+              <div className="p-6 rounded-3xl bg-white border border-[#EADBBA] shadow-xs space-y-4">
+                <h3 className="font-display text-xl font-semibold text-[#251B12] mb-2">
                   Salon Contact & Location Details
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-[#3B2230] uppercase mb-1">
+                    <label className="block text-xs font-semibold text-[#251B12] uppercase mb-1">
                       Salon Name
                     </label>
                     <input
@@ -845,12 +845,12 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                       onChange={(e) =>
                         setBusinessDetails({ ...businessDetails, name: e.target.value })
                       }
-                      className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs text-[#3B2230]"
+                      className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs text-[#251B12]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-[#3B2230] uppercase mb-1">
+                    <label className="block text-xs font-semibold text-[#251B12] uppercase mb-1">
                       Owner Name
                     </label>
                     <input
@@ -859,12 +859,12 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                       onChange={(e) =>
                         setBusinessDetails({ ...businessDetails, owner: e.target.value })
                       }
-                      className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs text-[#3B2230]"
+                      className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs text-[#251B12]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-[#3B2230] uppercase mb-1">
+                    <label className="block text-xs font-semibold text-[#251B12] uppercase mb-1">
                       Phone Number
                     </label>
                     <input
@@ -877,12 +877,12 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                           phoneRaw: e.target.value.replace(/\s+/g, ''),
                         })
                       }
-                      className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs text-[#3B2230]"
+                      className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs text-[#251B12]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-[#3B2230] uppercase mb-1">
+                    <label className="block text-xs font-semibold text-[#251B12] uppercase mb-1">
                       Email Address
                     </label>
                     <input
@@ -891,13 +891,13 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                       onChange={(e) =>
                         setBusinessDetails({ ...businessDetails, email: e.target.value })
                       }
-                      className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs text-[#3B2230]"
+                      className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs text-[#251B12]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#3B2230] uppercase mb-1">
+                  <label className="block text-xs font-semibold text-[#251B12] uppercase mb-1">
                     Street Address
                   </label>
                   <input
@@ -906,12 +906,12 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                     onChange={(e) =>
                       setBusinessDetails({ ...businessDetails, address: e.target.value })
                     }
-                    className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs text-[#3B2230]"
+                    className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs text-[#251B12]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#3B2230] uppercase mb-1">
+                  <label className="block text-xs font-semibold text-[#251B12] uppercase mb-1">
                     Instagram URL
                   </label>
                   <input
@@ -920,12 +920,12 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                     onChange={(e) =>
                       setBusinessDetails({ ...businessDetails, instagram: e.target.value })
                     }
-                    className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs text-[#3B2230]"
+                    className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs text-[#251B12]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#3B2230] uppercase mb-1">
+                  <label className="block text-xs font-semibold text-[#251B12] uppercase mb-1">
                     Subheadline Tagline
                   </label>
                   <textarea
@@ -934,14 +934,14 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                     onChange={(e) =>
                       setBusinessDetails({ ...businessDetails, subheadline: e.target.value })
                     }
-                    className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs text-[#3B2230]"
+                    className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs text-[#251B12]"
                   />
                 </div>
               </div>
 
               {/* Opening Hours Table */}
-              <div className="p-6 rounded-3xl bg-white border border-[#F8E1E4] shadow-xs space-y-4">
-                <h3 className="font-display text-xl font-semibold text-[#3B2230]">
+              <div className="p-6 rounded-3xl bg-white border border-[#EADBBA] shadow-xs space-y-4">
+                <h3 className="font-display text-xl font-semibold text-[#251B12]">
                   Opening Hours Schedule
                 </h3>
 
@@ -956,7 +956,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                           updated[idx].days = e.target.value;
                           setSalonHours(updated);
                         }}
-                        className="px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs text-[#3B2230]"
+                        className="px-3 py-2 rounded-xl border border-[#EADBBA] text-xs text-[#251B12]"
                       />
                       <input
                         type="text"
@@ -966,7 +966,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                           updated[idx].hours = e.target.value;
                           setSalonHours(updated);
                         }}
-                        className="px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs text-[#3B2230]"
+                        className="px-3 py-2 rounded-xl border border-[#EADBBA] text-xs text-[#251B12]"
                       />
                     </div>
                   ))}
@@ -975,7 +975,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
 
               <button
                 type="submit"
-                className="px-8 py-3 rounded-full bg-gradient-to-r from-[#E65D73] to-[#B76E79] text-white text-xs font-semibold shadow-md active:scale-95 transition-all"
+                className="px-8 py-3 rounded-full bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white text-xs font-semibold shadow-md active:scale-95 transition-all"
               >
                 Save All Salon Details
               </button>
@@ -983,11 +983,11 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
 
             {/* Right Column: Password Security Overhaul */}
             <div className="lg:col-span-4 space-y-6">
-              <div className="p-6 rounded-3xl bg-white border border-[#F8E1E4] shadow-xs space-y-4">
-                <h3 className="font-display text-xl font-semibold text-[#3B2230]">
+              <div className="p-6 rounded-3xl bg-white border border-[#EADBBA] shadow-xs space-y-4">
+                <h3 className="font-display text-xl font-semibold text-[#251B12]">
                   Change Admin Password
                 </h3>
-                <p className="text-xs text-[#B76E79]">
+                <p className="text-xs text-[#8C7355]">
                   Update your admin dashboard password securely.
                 </p>
 
@@ -1005,7 +1005,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
 
                 <form onSubmit={handleChangePassword} className="space-y-3">
                   <div>
-                    <label className="block text-xs font-medium text-[#3B2230] mb-1">
+                    <label className="block text-xs font-medium text-[#251B12] mb-1">
                       Current Password
                     </label>
                     <input
@@ -1015,13 +1015,13 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                         setPasswordForm({ ...passwordForm, current: e.target.value })
                       }
                       placeholder="••••••••••••"
-                      className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                      className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                       required
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-[#3B2230] mb-1">
+                    <label className="block text-xs font-medium text-[#251B12] mb-1">
                       New Password
                     </label>
                     <input
@@ -1031,13 +1031,13 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                         setPasswordForm({ ...passwordForm, newPass: e.target.value })
                       }
                       placeholder="Minimum 6 characters"
-                      className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                      className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                       required
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-[#3B2230] mb-1">
+                    <label className="block text-xs font-medium text-[#251B12] mb-1">
                       Confirm New Password
                     </label>
                     <input
@@ -1047,14 +1047,14 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                         setPasswordForm({ ...passwordForm, confirm: e.target.value })
                       }
                       placeholder="Repeat new password"
-                      className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                      className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                       required
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-2.5 rounded-xl bg-[#3B2230] text-white text-xs font-semibold hover:bg-[#E65D73] transition-colors"
+                    className="w-full py-2.5 rounded-xl bg-[#251B12] text-white text-xs font-semibold hover:bg-[#C9A24B] transition-colors"
                   >
                     Update Password
                   </button>
@@ -1070,9 +1070,9 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
       {/* ==================================================================== */}
       {(editingService || isAddingService) && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="w-full max-w-lg rounded-3xl bg-white p-6 sm:p-8 shadow-2xl border border-[#F8E1E4] max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#F8E1E4]">
-              <h3 className="font-display text-xl font-semibold text-[#3B2230]">
+          <div className="w-full max-w-lg rounded-3xl bg-white p-6 sm:p-8 shadow-2xl border border-[#EADBBA] max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#EADBBA]">
+              <h3 className="font-display text-xl font-semibold text-[#251B12]">
                 {isAddingService ? 'Add New Service' : 'Edit Service & Price'}
               </h3>
               <button
@@ -1107,50 +1107,50 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
               className="space-y-4"
             >
               <div>
-                <label className="block text-xs font-semibold text-[#3B2230] mb-1">
+                <label className="block text-xs font-semibold text-[#251B12] mb-1">
                   Service Title *
                 </label>
                 <input
                   name="title"
                   defaultValue={editingService?.title || ''}
                   placeholder="e.g. Honey Blonde Balayage & Foil"
-                  className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                  className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                   required
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-[#3B2230] mb-1">
+                  <label className="block text-xs font-semibold text-[#251B12] mb-1">
                     Price (starting rate) *
                   </label>
                   <input
                     name="price"
                     defaultValue={editingService?.price || 'from $'}
                     placeholder="e.g. from $195"
-                    className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                    className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#3B2230] mb-1">Duration</label>
+                  <label className="block text-xs font-semibold text-[#251B12] mb-1">Duration</label>
                   <input
                     name="duration"
                     defaultValue={editingService?.duration || '60 mins'}
                     placeholder="e.g. 2 - 3 hrs"
-                    className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                    className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-[#3B2230] mb-1">Category</label>
+                  <label className="block text-xs font-semibold text-[#251B12] mb-1">Category</label>
                   <select
                     name="category"
                     defaultValue={editingService?.category || 'Hair & Color'}
-                    className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                    className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                   >
                     <option value="Hair & Color">Hair & Color</option>
                     <option value="Styling & Cuts">Styling & Cuts</option>
@@ -1160,28 +1160,28 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#3B2230] mb-1">Badge</label>
+                  <label className="block text-xs font-semibold text-[#251B12] mb-1">Badge</label>
                   <input
                     name="badge"
                     defaultValue={editingService?.badge || 'Popular'}
                     placeholder="e.g. Guest Favorite"
-                    className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                    className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#3B2230] mb-1">Image URL</label>
+                <label className="block text-xs font-semibold text-[#251B12] mb-1">Image URL</label>
                 <input
                   name="image"
                   defaultValue={editingService?.image || '/images/hair2.jpg'}
                   placeholder="/images/hair2.jpg or /uploads/..."
-                  className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                  className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#3B2230] mb-1">
+                <label className="block text-xs font-semibold text-[#251B12] mb-1">
                   Description
                 </label>
                 <textarea
@@ -1189,36 +1189,36 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                   rows={2}
                   defaultValue={editingService?.description || ''}
                   placeholder="Detailed description of the salon treatment..."
-                  className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                  className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#3B2230] mb-1">
+                <label className="block text-xs font-semibold text-[#251B12] mb-1">
                   Perks (comma-separated)
                 </label>
                 <input
                   name="perks"
                   defaultValue={(editingService?.perks || []).join(', ')}
                   placeholder="Gloss toner included, Scalp massage, Bouncy finish"
-                  className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                  className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                 />
               </div>
 
-              <div className="pt-3 border-t border-[#F8E1E4] flex items-center justify-end gap-2">
+              <div className="pt-3 border-t border-[#EADBBA] flex items-center justify-end gap-2">
                 <button
                   type="button"
                   onClick={() => {
                     setEditingService(null);
                     setIsAddingService(false);
                   }}
-                  className="px-4 py-2 rounded-xl border border-[#F8E1E4] text-xs font-semibold"
+                  className="px-4 py-2 rounded-xl border border-[#EADBBA] text-xs font-semibold"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-xl bg-gradient-to-r from-[#E65D73] to-[#B76E79] text-white text-xs font-semibold"
+                  className="px-5 py-2 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white text-xs font-semibold"
                 >
                   Save Service
                 </button>
@@ -1233,9 +1233,9 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
       {/* ==================================================================== */}
       {isAddingGallery && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="w-full max-w-md rounded-3xl bg-white p-6 sm:p-8 shadow-2xl border border-[#F8E1E4]">
-            <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#F8E1E4]">
-              <h3 className="font-display text-xl font-semibold text-[#3B2230]">
+          <div className="w-full max-w-md rounded-3xl bg-white p-6 sm:p-8 shadow-2xl border border-[#EADBBA]">
+            <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#EADBBA]">
+              <h3 className="font-display text-xl font-semibold text-[#251B12]">
                 Upload Photo to Gallery
               </h3>
               <button
@@ -1255,7 +1255,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
               {/* File upload drag/select box */}
               <div
                 onClick={() => fileInputRef.current?.click()}
-                className="cursor-pointer border-2 border-dashed border-[#F8A5B2] hover:border-[#E65D73] rounded-2xl p-4 text-center transition-colors bg-[#FFF9FA]"
+                className="cursor-pointer border-2 border-dashed border-[#E6C36E] hover:border-[#C9A24B] rounded-2xl p-4 text-center transition-colors bg-[#FAF7EE]"
               >
                 <input
                   type="file"
@@ -1271,17 +1271,17 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                   </div>
                 ) : (
                   <div className="py-6">
-                    <Upload className="w-8 h-8 text-[#E65D73] mx-auto mb-2 animate-bounce" />
-                    <p className="text-xs font-semibold text-[#3B2230]">
+                    <Upload className="w-8 h-8 text-[#C9A24B] mx-auto mb-2 animate-bounce" />
+                    <p className="text-xs font-semibold text-[#251B12]">
                       Click to choose an image from your device
                     </p>
-                    <p className="text-[10px] text-[#B76E79] mt-1">PNG, JPG, or WebP up to 10MB</p>
+                    <p className="text-[10px] text-[#8C7355] mt-1">PNG, JPG, or WebP up to 10MB</p>
                   </div>
                 )}
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#3B2230] mb-1">
+                <label className="block text-xs font-semibold text-[#251B12] mb-1">
                   Photo Title *
                 </label>
                 <input
@@ -1289,14 +1289,14 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                   value={newGalleryData.title}
                   onChange={(e) => setNewGalleryData({ ...newGalleryData, title: e.target.value })}
                   placeholder="e.g. Violet Money-Piece Balayage"
-                  className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                  className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                   required
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-[#3B2230] mb-1">Category</label>
+                  <label className="block text-xs font-semibold text-[#251B12] mb-1">Category</label>
                   <select
                     value={newGalleryData.categoryName}
                     onChange={(e) => {
@@ -1307,7 +1307,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                       else if (val.includes('Studio')) filter = 'studio';
                       setNewGalleryData({ ...newGalleryData, categoryName: val, filter });
                     }}
-                    className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                    className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                   >
                     <option value="Hair & Color">Hair & Color</option>
                     <option value="Styling & Cuts">Styling & Cuts</option>
@@ -1317,19 +1317,19 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#3B2230] mb-1">Badge</label>
+                  <label className="block text-xs font-semibold text-[#251B12] mb-1">Badge</label>
                   <input
                     type="text"
                     value={newGalleryData.badge}
                     onChange={(e) => setNewGalleryData({ ...newGalleryData, badge: e.target.value })}
                     placeholder="e.g. Trend Alert"
-                    className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                    className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#3B2230] mb-1">
+                <label className="block text-xs font-semibold text-[#251B12] mb-1">
                   Subtitle / Notes
                 </label>
                 <input
@@ -1339,21 +1339,21 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                     setNewGalleryData({ ...newGalleryData, subtitle: e.target.value })
                   }
                   placeholder="Short description of the look..."
-                  className="w-full px-3 py-2 rounded-xl border border-[#F8E1E4] text-xs"
+                  className="w-full px-3 py-2 rounded-xl border border-[#EADBBA] text-xs"
                 />
               </div>
 
-              <div className="pt-3 border-t border-[#F8E1E4] flex items-center justify-end gap-2">
+              <div className="pt-3 border-t border-[#EADBBA] flex items-center justify-end gap-2">
                 <button
                   type="button"
                   onClick={() => setIsAddingGallery(false)}
-                  className="px-4 py-2 rounded-xl border border-[#F8E1E4] text-xs font-semibold"
+                  className="px-4 py-2 rounded-xl border border-[#EADBBA] text-xs font-semibold"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-xl bg-gradient-to-r from-[#E65D73] to-[#B76E79] text-white text-xs font-semibold"
+                  className="px-5 py-2 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B38728] text-white text-xs font-semibold"
                 >
                   Upload & Publish
                 </button>

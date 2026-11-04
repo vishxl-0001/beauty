@@ -80,7 +80,7 @@ export default function BookingSection({ preSelectedService }) {
           particleCount: 80,
           spread: 70,
           origin: { y: 0.6 },
-          colors: ['#E65D73', '#C9A24B', '#F8A5B2', '#D9A58B', '#FFFFFF'],
+          colors: ['#C9A24B', '#C9A24B', '#E6C36E', '#D9A58B', '#FFFFFF'],
         });
       } catch (err) {
         // Fallback silently if canvas not supported
@@ -110,46 +110,46 @@ export default function BookingSection({ preSelectedService }) {
   };
 
   return (
-    <section id="booking" className="py-20 md:py-28 relative overflow-hidden bg-gradient-to-b from-[#FFFDFB] via-[#FFF5F7] to-[#FFFDFB]">
+    <section id="booking" className="py-20 md:py-28 relative overflow-hidden bg-gradient-to-b from-[#FFFDFB] via-[#FAF5EA] to-[#FFFDFB]">
       {/* Decorative Blur Orbs */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 rounded-full bg-[#F8E1E4]/50 blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute top-1/4 left-10 w-96 h-96 rounded-full bg-[#EADBBA]/50 blur-3xl -z-10 pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[#F6EBDD]/60 blur-3xl -z-10 pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF0F3] border border-[#F8E1E4] text-xs font-semibold text-[#E65D73] uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF5EA] border border-[#EADBBA] text-xs font-semibold text-[#C9A24B] uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5 text-[#C9A24B]" />
             <span>Reserve Your Salon Chair</span>
           </div>
 
-          <h2 className="text-fluid-h2 font-display font-medium text-[#3B2230] tracking-tight mb-4">
+          <h2 className="text-fluid-h2 font-display font-medium text-[#251B12] tracking-tight mb-4">
             Book Your Appointment
           </h2>
 
-          <p className="text-sm sm:text-base text-[#3B2230]/75 leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-[#251B12]/75 leading-relaxed font-normal">
             Take a moment for yourself. Choose your desired treatment and date, and Wendyl will reach out to confirm your booking and welcome you.
           </p>
         </div>
 
         {/* Main Booking Container */}
-        <div className="relative rounded-3xl glass-panel p-6 sm:p-10 md:p-12 border border-[#F8E1E4] shadow-2xl shadow-rose-950/5">
+        <div className="relative rounded-3xl glass-panel p-6 sm:p-10 md:p-12 border border-[#EADBBA] shadow-2xl shadow-amber-950/5">
           {/* Subtle top brand decoration */}
-          <div className="flex items-center justify-between pb-6 mb-8 border-b border-[#F8E1E4]/60">
+          <div className="flex items-center justify-between pb-6 mb-8 border-b border-[#EADBBA]/60">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#FFF0F3] border border-[#F8E1E4] flex items-center justify-center p-1">
+              <div className="w-10 h-10 rounded-full bg-[#FAF5EA] border border-[#EADBBA] flex items-center justify-center p-1">
                 <img src="/images/logo.png" alt="Logo" className="w-full h-full object-contain" />
               </div>
               <div>
-                <p className="font-display font-semibold text-base text-[#3B2230]">
+                <p className="font-display font-semibold text-base text-[#251B12]">
                   Norwen Beauty Salon
                 </p>
-                <p className="text-xs text-[#B76E79]">Terrace End, Palmerston North</p>
+                <p className="text-xs text-[#8C7355]">Terrace End, Palmerston North</p>
               </div>
             </div>
 
-            <div className="hidden sm:flex items-center gap-1.5 text-xs text-[#E65D73] font-medium bg-[#FFF0F3] px-3 py-1 rounded-full border border-[#F8E1E4]">
-              <Heart className="w-3.5 h-3.5 fill-[#E65D73]" />
+            <div className="hidden sm:flex items-center gap-1.5 text-xs text-[#C9A24B] font-medium bg-[#FAF5EA] px-3 py-1 rounded-full border border-[#EADBBA]">
+              <Heart className="w-3.5 h-3.5 fill-[#C9A24B]" />
               <span>Glow Up With Us</span>
             </div>
           </div>
@@ -168,11 +168,11 @@ export default function BookingSection({ preSelectedService }) {
                 {/* Row 1: Full Name & Phone */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-[#3B2230] uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
                       Full Name *
                     </label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#B76E79]">
+                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#8C7355]">
                         <User className="w-4 h-4" />
                       </div>
                       <input
@@ -183,10 +183,10 @@ export default function BookingSection({ preSelectedService }) {
                           if (errors.fullName) setErrors({ ...errors, fullName: null });
                         }}
                         placeholder="e.g. Jessica Smith"
-                        className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-white border text-sm text-[#3B2230] placeholder-[#3B2230]/40 focus:outline-none focus:ring-2 transition-all ${
+                        className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-white border text-sm text-[#251B12] placeholder-[#251B12]/40 focus:outline-none focus:ring-2 transition-all ${
                           errors.fullName
                             ? 'border-red-400 focus:ring-red-300'
-                            : 'border-[#F8E1E4] focus:ring-[#E65D73]/30 focus:border-[#E65D73]'
+                            : 'border-[#EADBBA] focus:ring-[#C9A24B]/30 focus:border-[#C9A24B]'
                         }`}
                       />
                     </div>
@@ -199,11 +199,11 @@ export default function BookingSection({ preSelectedService }) {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-[#3B2230] uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
                       Phone Number *
                     </label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#B76E79]">
+                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#8C7355]">
                         <Phone className="w-4 h-4" />
                       </div>
                       <input
@@ -214,10 +214,10 @@ export default function BookingSection({ preSelectedService }) {
                           if (errors.phone) setErrors({ ...errors, phone: null });
                         }}
                         placeholder="e.g. +64 21 000 0000"
-                        className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-white border text-sm text-[#3B2230] placeholder-[#3B2230]/40 focus:outline-none focus:ring-2 transition-all ${
+                        className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-white border text-sm text-[#251B12] placeholder-[#251B12]/40 focus:outline-none focus:ring-2 transition-all ${
                           errors.phone
                             ? 'border-red-400 focus:ring-red-300'
-                            : 'border-[#F8E1E4] focus:ring-[#E65D73]/30 focus:border-[#E65D73]'
+                            : 'border-[#EADBBA] focus:ring-[#C9A24B]/30 focus:border-[#C9A24B]'
                         }`}
                       />
                     </div>
@@ -233,11 +233,11 @@ export default function BookingSection({ preSelectedService }) {
                 {/* Row 2: Email & Service */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-[#3B2230] uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
                       Email Address *
                     </label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#B76E79]">
+                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#8C7355]">
                         <Mail className="w-4 h-4" />
                       </div>
                       <input
@@ -248,10 +248,10 @@ export default function BookingSection({ preSelectedService }) {
                           if (errors.email) setErrors({ ...errors, email: null });
                         }}
                         placeholder="e.g. jessica@example.co.nz"
-                        className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-white border text-sm text-[#3B2230] placeholder-[#3B2230]/40 focus:outline-none focus:ring-2 transition-all ${
+                        className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-white border text-sm text-[#251B12] placeholder-[#251B12]/40 focus:outline-none focus:ring-2 transition-all ${
                           errors.email
                             ? 'border-red-400 focus:ring-red-300'
-                            : 'border-[#F8E1E4] focus:ring-[#E65D73]/30 focus:border-[#E65D73]'
+                            : 'border-[#EADBBA] focus:ring-[#C9A24B]/30 focus:border-[#C9A24B]'
                         }`}
                       />
                     </div>
@@ -264,7 +264,7 @@ export default function BookingSection({ preSelectedService }) {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-[#3B2230] uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
                       Select Treatment *
                     </label>
                     <div className="relative">
@@ -274,10 +274,10 @@ export default function BookingSection({ preSelectedService }) {
                           setFormData({ ...formData, service: e.target.value });
                           if (errors.service) setErrors({ ...errors, service: null });
                         }}
-                        className={`w-full px-4 py-3 rounded-2xl bg-white border text-sm text-[#3B2230] focus:outline-none focus:ring-2 transition-all appearance-none cursor-pointer ${
+                        className={`w-full px-4 py-3 rounded-2xl bg-white border text-sm text-[#251B12] focus:outline-none focus:ring-2 transition-all appearance-none cursor-pointer ${
                           errors.service
                             ? 'border-red-400 focus:ring-red-300'
-                            : 'border-[#F8E1E4] focus:ring-[#E65D73]/30 focus:border-[#E65D73]'
+                            : 'border-[#EADBBA] focus:ring-[#C9A24B]/30 focus:border-[#C9A24B]'
                         }`}
                       >
                         <option value="">-- Choose a Service --</option>
@@ -290,7 +290,7 @@ export default function BookingSection({ preSelectedService }) {
                           Custom Consultation & Styling (Tailored)
                         </option>
                       </select>
-                      <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-[#B76E79]">
+                      <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-[#8C7355]">
                         ▼
                       </div>
                     </div>
@@ -306,11 +306,11 @@ export default function BookingSection({ preSelectedService }) {
                 {/* Row 3: Preferred Date & Time Slot */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-[#3B2230] uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
                       Preferred Date *
                     </label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#B76E79]">
+                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#8C7355]">
                         <Calendar className="w-4 h-4" />
                       </div>
                       <input
@@ -321,10 +321,10 @@ export default function BookingSection({ preSelectedService }) {
                           setFormData({ ...formData, date: e.target.value });
                           if (errors.date) setErrors({ ...errors, date: null });
                         }}
-                        className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-white border text-sm text-[#3B2230] focus:outline-none focus:ring-2 transition-all ${
+                        className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-white border text-sm text-[#251B12] focus:outline-none focus:ring-2 transition-all ${
                           errors.date
                             ? 'border-red-400 focus:ring-red-300'
-                            : 'border-[#F8E1E4] focus:ring-[#E65D73]/30 focus:border-[#E65D73]'
+                            : 'border-[#EADBBA] focus:ring-[#C9A24B]/30 focus:border-[#C9A24B]'
                         }`}
                       />
                     </div>
@@ -337,11 +337,11 @@ export default function BookingSection({ preSelectedService }) {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-[#3B2230] uppercase tracking-wider mb-2">
+                    <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
                       Preferred Time Slot *
                     </label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#B76E79]">
+                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#8C7355]">
                         <Clock className="w-4 h-4" />
                       </div>
                       <select
@@ -350,10 +350,10 @@ export default function BookingSection({ preSelectedService }) {
                           setFormData({ ...formData, timeSlot: e.target.value });
                           if (errors.timeSlot) setErrors({ ...errors, timeSlot: null });
                         }}
-                        className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-white border text-sm text-[#3B2230] focus:outline-none focus:ring-2 transition-all appearance-none cursor-pointer ${
+                        className={`w-full pl-10 pr-4 py-3 rounded-2xl bg-white border text-sm text-[#251B12] focus:outline-none focus:ring-2 transition-all appearance-none cursor-pointer ${
                           errors.timeSlot
                             ? 'border-red-400 focus:ring-red-300'
-                            : 'border-[#F8E1E4] focus:ring-[#E65D73]/30 focus:border-[#E65D73]'
+                            : 'border-[#EADBBA] focus:ring-[#C9A24B]/30 focus:border-[#C9A24B]'
                         }`}
                       >
                         <option value="">-- Choose a Time --</option>
@@ -363,7 +363,7 @@ export default function BookingSection({ preSelectedService }) {
                           </option>
                         ))}
                       </select>
-                      <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-[#B76E79]">
+                      <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-[#8C7355]">
                         ▼
                       </div>
                     </div>
@@ -378,7 +378,7 @@ export default function BookingSection({ preSelectedService }) {
 
                 {/* Notes / Inspiration */}
                 <div>
-                  <label className="block text-xs font-semibold text-[#3B2230] uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
                     Notes or Style Requests (Optional)
                   </label>
                   <textarea
@@ -386,13 +386,13 @@ export default function BookingSection({ preSelectedService }) {
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                     placeholder="Tell Wendyl about your hair length, prior color treatments, or nail inspiration..."
-                    className="w-full px-4 py-3 rounded-2xl bg-white border border-[#F8E1E4] text-sm text-[#3B2230] placeholder-[#3B2230]/40 focus:outline-none focus:ring-2 focus:ring-[#E65D73]/30 focus:border-[#E65D73] transition-all"
+                    className="w-full px-4 py-3 rounded-2xl bg-white border border-[#EADBBA] text-sm text-[#251B12] placeholder-[#251B12]/40 focus:outline-none focus:ring-2 focus:ring-[#C9A24B]/30 focus:border-[#C9A24B] transition-all"
                   />
                 </div>
 
                 {/* Submit Button */}
                 <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <p className="text-xs text-[#B76E79] flex items-center gap-1.5">
+                  <p className="text-xs text-[#8C7355] flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-[#C9A24B]" />
                     <span>No pre-payment required for booking requests</span>
                   </p>
@@ -400,7 +400,7 @@ export default function BookingSection({ preSelectedService }) {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto px-9 py-3.5 rounded-full bg-gradient-to-r from-[#E65D73] via-[#D97D8D] to-[#C9A24B] text-white font-semibold text-sm shadow-lg shadow-[#E65D73]/25 hover:shadow-xl hover:shadow-[#E65D73]/35 active:scale-95 transition-all flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-9 py-3.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#DFB76C] to-[#B38728] text-white font-semibold text-sm shadow-lg shadow-[#C9A24B]/25 hover:shadow-xl hover:shadow-[#C9A24B]/35 active:scale-95 transition-all flex items-center justify-center gap-2"
                   >
                     {isSubmitting ? (
                       <span>Reserving your spot...</span>
@@ -423,24 +423,24 @@ export default function BookingSection({ preSelectedService }) {
                 exit={{ opacity: 0 }}
                 className="py-10 text-center flex flex-col items-center"
               >
-                <div className="w-20 h-20 rounded-full bg-[#FFF0F3] border-2 border-[#E65D73] flex items-center justify-center mb-6 shadow-lg shadow-[#E65D73]/20">
-                  <CheckCircle2 className="w-10 h-10 text-[#E65D73] animate-pulse" />
+                <div className="w-20 h-20 rounded-full bg-[#FAF5EA] border-2 border-[#C9A24B] flex items-center justify-center mb-6 shadow-lg shadow-[#C9A24B]/20">
+                  <CheckCircle2 className="w-10 h-10 text-[#C9A24B] animate-pulse" />
                 </div>
 
-                <span className="text-xs font-bold uppercase tracking-widest text-[#E65D73] mb-1">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#C9A24B] mb-1">
                   Request Received
                 </span>
 
-                <h3 className="font-display text-3xl sm:text-4xl font-semibold text-[#3B2230] mb-3">
+                <h3 className="font-display text-3xl sm:text-4xl font-semibold text-[#251B12] mb-3">
                   Thank You, {formData.fullName}!
                 </h3>
 
-                <p className="text-sm sm:text-base text-[#3B2230]/80 max-w-lg mb-6 leading-relaxed font-normal">
-                  Your appointment inquiry for <strong className="text-[#E65D73]">{formData.service}</strong> on{' '}
+                <p className="text-sm sm:text-base text-[#251B12]/80 max-w-lg mb-6 leading-relaxed font-normal">
+                  Your appointment inquiry for <strong className="text-[#C9A24B]">{formData.service}</strong> on{' '}
                   <strong>{formData.date}</strong> at <strong>{formData.timeSlot}</strong> has been received. Wendyl will reach out directly to confirm your booking!
                 </p>
 
-                <div className="p-4 rounded-2xl bg-white border border-[#F8E1E4] max-w-md w-full text-left text-xs text-[#3B2230] space-y-1.5 mb-8 shadow-xs">
+                <div className="p-4 rounded-2xl bg-white border border-[#EADBBA] max-w-md w-full text-left text-xs text-[#251B12] space-y-1.5 mb-8 shadow-xs">
                   <p><strong>Confirmation Contact:</strong> {formData.phone} • {formData.email}</p>
                   <p><strong>Salon Address:</strong> {businessDetails.address}</p>
                   <p><strong>Owner:</strong> Wendyl Tagaan ({businessDetails.phone})</p>
@@ -449,7 +449,7 @@ export default function BookingSection({ preSelectedService }) {
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="px-6 py-2.5 rounded-full bg-white border border-[#F8E1E4] text-[#3B2230] text-xs font-semibold hover:border-[#E65D73] transition-all shadow-xs"
+                  className="px-6 py-2.5 rounded-full bg-white border border-[#EADBBA] text-[#251B12] text-xs font-semibold hover:border-[#C9A24B] transition-all shadow-xs"
                 >
                   Book Another Treatment
                 </button>

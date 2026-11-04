@@ -24,7 +24,7 @@ export default function Preloader({ onComplete }) {
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#FFFDFB] overflow-hidden"
         >
           {/* Soft ambient background glow */}
-          <div className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-[#F8E1E4]/70 via-[#FDF4F5]/90 to-[#F6EBDD]/70 blur-3xl -z-10 animate-pulse pointer-events-none" />
+          <div className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-[#EADBBA]/70 via-[#FAF5EA]/90 to-[#F6EBDD]/70 blur-3xl -z-10 animate-pulse pointer-events-none" />
 
           {/* Central Logo & Monogram container */}
           <motion.div
@@ -50,7 +50,7 @@ export default function Preloader({ onComplete }) {
                 className="absolute inset-0 pointer-events-none"
               >
                 <Sparkles className="w-4 h-4 text-[#C9A24B] absolute -top-1 right-2 animate-bounce" />
-                <Heart className="w-3.5 h-3.5 text-[#E65D73] absolute bottom-0 -left-1 fill-[#E65D73]" />
+                <Heart className="w-3.5 h-3.5 text-[#C9A24B] absolute bottom-0 -left-1 fill-[#C9A24B]" />
               </motion.div>
             </div>
 
@@ -59,7 +59,7 @@ export default function Preloader({ onComplete }) {
               initial={{ y: 15, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="font-display text-2xl md:text-3xl font-semibold tracking-wide text-[#3B2230]"
+              className="font-display text-2xl md:text-3xl font-semibold tracking-wide text-[#251B12]"
             >
               Norwen
             </motion.h1>
@@ -68,15 +68,15 @@ export default function Preloader({ onComplete }) {
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.45, duration: 0.6 }}
-              className="text-xs uppercase tracking-[0.3em] text-[#B76E79] font-medium mt-1"
+              className="text-xs uppercase tracking-[0.3em] text-[#8C7355] font-medium mt-1"
             >
               Beauty Salon • Palmerston North
             </motion.p>
 
             {/* Delicate Loading Bar */}
-            <div className="w-36 h-[2px] bg-[#F8E1E4] rounded-full mt-6 overflow-hidden relative">
+            <div className="w-36 h-[2px] bg-[#EADBBA] rounded-full mt-6 overflow-hidden relative">
               <motion.div
-                className="h-full bg-gradient-to-r from-[#B76E79] via-[#E65D73] to-[#C9A24B] rounded-full"
+                className="h-full bg-gradient-to-r from-[#D4AF37] via-[#E6C36E] to-[#B38728] rounded-full"
                 initial={{ x: '-100%' }}
                 animate={{ x: '100%' }}
                 transition={{ repeat: Infinity, duration: 1.2, ease: 'easeInOut' }}
@@ -88,7 +88,7 @@ export default function Preloader({ onComplete }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="font-script text-lg text-[#E65D73] mt-3"
+              className="font-script text-lg text-[#C9A24B] mt-3"
             >
               Glow up with us...
             </motion.span>

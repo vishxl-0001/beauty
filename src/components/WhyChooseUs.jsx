@@ -10,32 +10,32 @@ export default function WhyChooseUs() {
       case 'Sparkles':
         return <Sparkles className="w-6 h-6 text-[#C9A24B]" />;
       case 'Crown':
-        return <Crown className="w-6 h-6 text-[#E65D73]" />;
+        return <Crown className="w-6 h-6 text-[#A67C1E]" />;
       case 'Heart':
-        return <Heart className="w-6 h-6 text-[#E65D73] fill-[#E65D73]/20" />;
+        return <Heart className="w-6 h-6 text-[#C9A24B] fill-[#C9A24B]/20" />;
       case 'Smile':
-        return <Smile className="w-6 h-6 text-[#B76E79]" />;
+        return <Smile className="w-6 h-6 text-[#8C7355]" />;
       default:
-        return <Sparkles className="w-6 h-6 text-[#E65D73]" />;
+        return <Sparkles className="w-6 h-6 text-[#C9A24B]" />;
     }
   };
 
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden bg-gradient-to-b from-[#FFFDFB] via-[#FFF8FA] to-[#FFFDFB]">
+    <section className="py-20 md:py-28 relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6ED] to-[#FFFDF9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF0F3] border border-[#F8E1E4] text-xs font-semibold text-[#E65D73] uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAF5EA] border border-[#EADBBA] text-xs font-semibold text-[#A67C1E] uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5 text-[#C9A24B]" />
             <span>The Norwen Distinction</span>
           </div>
 
-          <h2 className="text-fluid-h2 font-display font-medium text-[#3B2230] tracking-tight mb-3">
+          <h2 className="text-fluid-h2 font-display font-medium text-[#251B12] tracking-tight mb-3">
             Why Our Guests Return
           </h2>
 
-          <p className="text-sm sm:text-base text-[#3B2230]/75 leading-relaxed font-normal">
-            We reject the rushed, loud atmosphere of assembly-line salons. Here, your time is honored, your hair is protected, and your nail artistry is crafted with pure passion.
+          <p className="text-sm sm:text-base text-[#251B12]/75 leading-relaxed font-normal">
+            We reject the rushed, loud atmosphere of assembly-line salons. Here, your time is honored, your hair is protected, and every beauty treatment is performed with heartfelt passion.
           </p>
         </div>
 
@@ -48,73 +48,74 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="p-6 sm:p-7 rounded-3xl glass-panel relative flex flex-col justify-between group hover:border-[#E65D73]/35 hover:-translate-y-1 transition-all duration-300"
+              className="p-6 sm:p-7 rounded-3xl glass-panel relative flex flex-col justify-between group hover:border-[#C9A24B]/50 hover:-translate-y-1 transition-all duration-300"
             >
               <div>
-                <div className="w-13 h-13 rounded-2xl bg-[#FFF0F3] border border-[#F8E1E4] flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                <div className="w-13 h-13 rounded-2xl bg-[#FAF5EA] border border-[#EADBBA] flex items-center justify-center mb-5 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                   {getIcon(feature.icon)}
                 </div>
 
-                <h3 className="font-display text-xl font-semibold text-[#3B2230] group-hover:text-[#E65D73] transition-colors mb-2.5">
+                <h3 className="font-display text-xl font-semibold text-[#251B12] group-hover:text-[#A67C1E] transition-colors mb-2.5">
                   {feature.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-[#3B2230]/75 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-[#251B12]/75 leading-relaxed font-normal">
                   {feature.description}
                 </p>
               </div>
 
-              <div className="pt-4 mt-6 border-t border-[#F8E1E4]/50 flex items-center justify-between">
-                <span className="text-[10px] uppercase font-bold tracking-wider text-[#B76E79]">
+              <div className="pt-4 mt-6 border-t border-[#EADBBA]/50 flex items-center justify-between">
+                <span className="text-[10px] uppercase font-bold tracking-wider text-[#8C7355]">
                   Feature 0{idx + 1}
                 </span>
-                <span className="font-script text-base text-[#E65D73]">Boutique Care</span>
+                <span className="font-script text-base text-[#A67C1E]">Boutique Care</span>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Visual Accent Banner (using Hair 3: emerald underlights) */}
+        {/* Visual Accent Banner */}
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-16 rounded-3xl overflow-hidden glass-panel border border-[#F8E1E4] p-6 sm:p-10 relative bg-gradient-to-r from-[#FFF5F7] via-[#FFFDFB] to-[#FBF5EE]"
+          className="mt-16 rounded-3xl overflow-hidden glass-panel border border-[#EADBBA] p-6 sm:p-10 relative bg-gradient-to-r from-[#FAF4E8] via-[#FFFDF9] to-[#FAF1DA]"
         >
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-8 text-left">
-              <span className="text-xs font-bold text-[#E65D73] tracking-widest uppercase block mb-1">
+              <span className="text-xs font-bold text-[#A67C1E] tracking-widest uppercase block mb-1">
                 Terrace End • Palmerston North
               </span>
-              <h3 className="font-display text-2xl sm:text-3xl font-semibold text-[#3B2230] mb-3">
+              <h3 className="font-display text-2xl sm:text-3xl font-semibold text-[#251B12] mb-3">
                 “Treat yourself, you deserve it.”
               </h3>
-              <p className="text-sm text-[#3B2230]/80 max-w-xl leading-relaxed mb-6 font-normal">
-                Book a peaceful hour away from your daily bustle. Enjoy unhurried, attentive hair styling and nail care customized solely to you.
+              <p className="text-sm text-[#251B12]/80 max-w-xl leading-relaxed mb-6 font-normal">
+                Book a peaceful hour away from your daily bustle. Enjoy unhurried, attentive hair styling, foot spa relaxation, and nail care customized solely to you.
               </p>
-              <div className="flex flex-wrap gap-4 text-xs font-medium text-[#3B2230]">
-                <span className="px-3 py-1 rounded-full bg-white border border-[#F8E1E4]">
+              <div className="flex flex-wrap gap-4 text-xs font-medium text-[#251B12]">
+                <span className="px-3 py-1 rounded-full bg-white border border-[#EADBBA]">
                   ✦ Complimentary Tea & Refreshments
                 </span>
-                <span className="px-3 py-1 rounded-full bg-white border border-[#F8E1E4]">
+                <span className="px-3 py-1 rounded-full bg-white border border-[#EADBBA]">
                   ✦ Convenient Terrace End Street Parking
                 </span>
               </div>
             </div>
 
             <div className="md:col-span-4 flex justify-center">
-              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full p-1.5 bg-gradient-to-tr from-[#E65D73] via-[#F8A5B2] to-[#C9A24B] shadow-xl">
+              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full p-1.5 bg-gradient-to-tr from-[#D4AF37] via-[#E6C36E] to-[#B38728] shadow-xl">
                 <div className="w-full h-full rounded-full overflow-hidden bg-white">
                   <img
                     src={salonImages.hairEmeraldUnderlights.src}
                     alt={salonImages.hairEmeraldUnderlights.alt}
+                    style={{ objectPosition: salonImages.hairEmeraldUnderlights.objectPosition }}
                     className="w-full h-full object-cover"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
-                <div className="absolute -bottom-2 -right-2 px-3 py-1 rounded-full bg-white text-[10px] font-bold text-[#E65D73] shadow-md border border-[#F8E1E4]">
+                <div className="absolute -bottom-2 -right-2 px-3 py-1 rounded-full bg-white text-[10px] font-bold text-[#A67C1E] shadow-md border border-[#EADBBA]">
                   Vivid Art
                 </div>
               </div>
