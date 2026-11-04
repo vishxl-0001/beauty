@@ -60,7 +60,7 @@ export default function Footer({ onBookClick, onOpenAdmin }) {
             </div>
 
             <p className="text-xs sm:text-sm text-white/75 leading-relaxed max-w-sm font-normal">
-              A private boutique salon in Terrace End dedicated to exquisite balayage, custom haircutting, and artistic nail design by founder Wendyl Tagaan.
+              A private boutique salon in Terrace End dedicated to exquisite balayage, custom haircutting, soothing foot spa treatments, and gentle natural nail care by founder Wendyl Tagaan.
             </p>
 
             <div className="pt-2 flex items-center gap-3">

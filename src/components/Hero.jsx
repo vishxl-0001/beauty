@@ -191,27 +191,27 @@ export default function Hero({ onBookClick, onServicesClick }) {
                 </div>
               </motion.div>
 
-              {/* Floating Bottom-Left Luxury Thumbnail: Pearl French Nails */}
+              {/* Floating Bottom-Left Luxury Thumbnail: Natural Nail Cleaning & Foot Spa */}
               <motion.div
                 animate={{ y: [0, 8, 0], rotate: [0, -2, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute -bottom-6 -left-3 sm:-left-8 p-2 rounded-2xl glass-panel shadow-xl border border-white/90 flex items-center gap-3 max-w-[210px]"
+                className="absolute -bottom-6 -left-3 sm:-left-8 p-2 rounded-2xl glass-panel shadow-xl border border-white/90 flex items-center gap-3 max-w-[220px]"
               >
                 <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-[#EADBBA]">
                   <img
-                    src={salonImages.nailsPearlFrench.src}
-                    alt={salonImages.nailsPearlFrench.alt}
-                    style={{ objectPosition: salonImages.nailsPearlFrench.objectPosition }}
+                    src={salonImages.manicurePedicure.src}
+                    alt={salonImages.manicurePedicure.alt}
+                    style={{ objectPosition: salonImages.manicurePedicure.objectPosition }}
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
                 </div>
                 <div className="text-left pr-2">
                   <span className="text-[10px] font-bold text-[#A67C1E] uppercase tracking-wider block">
-                    Couture Nails
+                    Natural Nail Care
                   </span>
                   <p className="text-xs font-semibold text-[#251B12] leading-tight">
-                    Pearl French Art
+                    Clean Nails & Foot Spa
                   </p>
                 </div>
               </motion.div>

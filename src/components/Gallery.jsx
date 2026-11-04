@@ -15,7 +15,7 @@ export default function Gallery({ onBookService }) {
     { id: 'all', label: 'All Creations' },
     { id: 'hair', label: 'Hair & Color' },
     { id: 'styling', label: 'Styling & Cuts' },
-    { id: 'nails', label: 'Nails & Art' },
+    { id: 'nails', label: 'Natural Nail Care' },
     { id: 'studio', label: 'Studio & Team' },
   ];
 

@@ -172,10 +172,10 @@ export const salonServices = [
     duration: '45 - 60 mins',
     image: '/images/NailCare(Manicure & Pedicure).jpeg',
     objectPosition: 'center 40%',
-    badge: 'Guest Love',
+    badge: 'Natural Nails Only',
     description:
-      'Pampering nail shaping, meticulous cuticle care, soothing foot spa massage, and long-lasting glossy polish for beautifully rejuvenated hands and feet.',
-    perks: ['Relaxing foot spa & foot massage', 'Nail shaping & buffing', 'High-shine durable finish'],
+      'Pampering natural nail cleaning, meticulous cuticle care, soothing foot spa massage, and a clean, healthy natural finish. (Natural nail cleaning and foot care only, no nail art designs).',
+    perks: ['Natural nail cleaning & shaping', 'Relaxing foot spa & foot massage', 'Nourishing cuticle care & clean finish'],
   },
 ];
 

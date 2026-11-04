@@ -1154,7 +1154,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                   >
                     <option value="Hair & Color">Hair & Color</option>
                     <option value="Styling & Cuts">Styling & Cuts</option>
-                    <option value="Nails & Art">Nails & Art</option>
+                    <option value="Natural Nail Care">Natural Nail Care</option>
                     <option value="Hair & Care">Hair & Care</option>
                   </select>
                 </div>
@@ -1302,7 +1302,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                     onChange={(e) => {
                       const val = e.target.value;
                       let filter = 'hair';
-                      if (val.includes('Nails')) filter = 'nails';
+                      if (val.includes('Nail')) filter = 'nails';
                       else if (val.includes('Styling')) filter = 'styling';
                       else if (val.includes('Studio')) filter = 'studio';
                       setNewGalleryData({ ...newGalleryData, categoryName: val, filter });
@@ -1311,7 +1311,7 @@ export default function AdminDashboard({ user, onLogout, onBackToSite }) {
                   >
                     <option value="Hair & Color">Hair & Color</option>
                     <option value="Styling & Cuts">Styling & Cuts</option>
-                    <option value="Nails & Art">Nails & Art</option>
+                    <option value="Natural Nail Care">Natural Nail Care</option>
                     <option value="Studio & Team">Studio & Team</option>
                   </select>
                 </div>

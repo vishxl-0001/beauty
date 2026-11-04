@@ -4,6 +4,8 @@
  * =============================================================================
  * Every image is analyzed, calibrated from a human point-of-view (POV),
  * and precisely matched to services, gallery items, testimonials, and brand sections.
+ *
+ * NOTE: Wendy offers natural nail cleaning, foot spa & pedicure only (no nail art designs).
  */
 
 export const salonImages = {
@@ -155,15 +157,15 @@ export const salonImages = {
   manicurePedicure: {
     id: 'service-manicure-pedicure',
     src: '/images/NailCare(Manicure & Pedicure).jpeg',
-    alt: 'Pampering manicure and rejuvenating foot spa pedicure with glossy polish',
-    title: 'Manicure & Pedicure',
+    alt: 'Pampering natural nail cleaning, shaping, and rejuvenating foot spa pedicure',
+    title: 'Natural Nail Cleaning, Manicure & Pedicure',
     category: 'nails',
-    section: 'Services (Nail Care)',
+    section: 'Services (Natural Nail Care)',
     aspectRatio: '1/1',
-    objectPosition: 'center 40%', // Human POV: pristine nail shaping and foot spa care
+    objectPosition: 'center 40%', // Human POV: pristine natural nail care and foot spa
   },
 
-  // Additional Portfolio Photography
+  // Additional Portfolio Photography (Hair only - nail art excluded per client instruction)
   hairPurpleBalayage: {
     id: 'hair1',
     src: '/images/hair1.jpg',
@@ -219,39 +221,6 @@ export const salonImages = {
     objectPosition: 'center 45%',
   },
 
-  nailsCutePastel: {
-    id: 'nails1',
-    src: '/images/nails1.jpg',
-    alt: 'Handcrafted pastel press-on tips with cute bunny art, ribbons, polka dots, and daisies',
-    title: 'Kawaii Pastel Hand-Painted Nail Tips',
-    category: 'nails',
-    section: 'Gallery',
-    aspectRatio: '4/5',
-    objectPosition: 'center center',
-  },
-
-  nailsPearlFrench: {
-    id: 'nails2',
-    src: '/images/nails2.jpg',
-    alt: 'Glossy almond French manicure adorned with delicate pearl bead embellishments',
-    title: 'Luxe Pearl Almond French Manicure',
-    category: 'nails',
-    section: 'Hero Accent Chip, Gallery',
-    aspectRatio: '1/1',
-    objectPosition: 'center center',
-  },
-
-  nailsPopArtHeart: {
-    id: 'nails3',
-    src: '/images/nails3.jpg',
-    alt: 'Pop-art comic style almond nails with bold black outlines and a glossy red heart accent',
-    title: 'Pop-Art Red Heart Manicure',
-    category: 'nails',
-    section: 'Gallery',
-    aspectRatio: '1/1',
-    objectPosition: 'center center',
-  },
-
   // Testimonials Proof Screenshots
   testimonialRhudna: {
     id: 'test-rhudna',
@@ -285,7 +254,8 @@ export const salonImages = {
 };
 
 /**
- * Rich Living Gallery catalog containing all salon imagery
+ * Rich Living Gallery catalog representing real studio services
+ * (Nail art designs removed; natural nail cleaning and foot spa retained)
  */
 export const galleryItems = [
   {
@@ -311,10 +281,11 @@ export const galleryItems = [
   },
   {
     ...salonImages.manicurePedicure,
-    categoryName: 'Nails & Art',
+    categoryName: 'Natural Nail Care',
     filter: 'nails',
-    subtitle: 'Rejuvenating foot spa soak, cuticle care & glossy pedicure',
-    badge: 'Guest Love',
+    title: 'Natural Nail Cleaning & Foot Spa Pedicure',
+    subtitle: 'Gentle natural nail cleaning, cuticle care, and soothing foot spa soak (no false designs)',
+    badge: 'Natural Nails Only',
   },
   {
     ...salonImages.haircutStyling,
@@ -322,13 +293,6 @@ export const galleryItems = [
     filter: 'styling',
     subtitle: 'Precision shaping and soft layered bounce blow-dry',
     badge: 'Starts at $25',
-  },
-  {
-    ...salonImages.nailsPearlFrench,
-    categoryName: 'Nails & Art',
-    filter: 'nails',
-    subtitle: 'Hand-set micro pearls on sheer nude almond tips',
-    badge: 'Most Requested',
   },
   {
     ...salonImages.salonTreatmentMoment,
@@ -366,13 +330,6 @@ export const galleryItems = [
     badge: 'Creative Color',
   },
   {
-    ...salonImages.nailsCutePastel,
-    categoryName: 'Nails & Art',
-    filter: 'nails',
-    subtitle: 'Bespoke hand-painted characters & pastel florals',
-    badge: 'Cute & Playful',
-  },
-  {
     ...salonImages.waxing,
     categoryName: 'Face & Body',
     filter: 'studio',
@@ -380,11 +337,11 @@ export const galleryItems = [
     badge: 'Silky Smooth',
   },
   {
-    ...salonImages.nailsPopArtHeart,
-    categoryName: 'Nails & Art',
-    filter: 'nails',
-    subtitle: 'Bold graphic line art with glossy red heart center',
-    badge: 'Trend Alert',
+    ...salonImages.hairEmeraldUnderlights,
+    categoryName: 'Hair & Color',
+    filter: 'hair',
+    subtitle: 'Hidden vivid emerald tone under rich brunette waves',
+    badge: 'Creative Color',
   },
   {
     ...salonImages.owner,
