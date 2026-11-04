@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Calendar, Menu, X, Phone, Shield, Heart } from 'lucide-react';
+import { Sparkles, Calendar, Menu, X, Phone, Heart } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 import { businessDetails } from '../data/content';
 
@@ -125,17 +125,6 @@ export default function Navbar({ onBookClick, onOpenAdmin }) {
 
           {/* Right Action Buttons */}
           <div className="flex items-center gap-3">
-            {/* Admin Portal Quick Access */}
-            <button
-              type="button"
-              onClick={onOpenAdmin}
-              title="Salon Admin Login"
-              aria-label="Open Admin Console"
-              className="hidden sm:flex items-center justify-center w-9 h-9 rounded-full bg-[#FAF5EA] border border-[#EADBBA] text-[#8C7355] hover:text-[#A67C1E] hover:border-[#C9A24B]/60 transition-all shadow-2xs"
-            >
-              <Shield className="w-4 h-4" />
-            </button>
-
             {/* Quick Instagram Link (Desktop) */}
             <a
               href={businessDetails.instagram}
@@ -248,17 +237,6 @@ export default function Navbar({ onBookClick, onOpenAdmin }) {
                   <span>Instagram</span>
                 </a>
               </div>
-
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  if (onOpenAdmin) onOpenAdmin();
-                }}
-                className="w-full py-2.5 rounded-2xl bg-white border border-[#EADBBA] text-[#251B12] text-xs font-semibold flex items-center justify-center gap-1.5"
-              >
-                <Shield className="w-3.5 h-3.5 text-[#C9A24B]" />
-                <span>Salon Staff / Admin Portal</span>
-              </button>
 
               <button
                 onClick={() => {
