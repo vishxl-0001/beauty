@@ -19,7 +19,7 @@ import AdminLogin from './components/admin/AdminLogin';
 import AdminDashboard from './components/admin/AdminDashboard';
 
 function SalonApp() {
-  const [selectedService, setSelectedService] = useState('');
+  const [selectedService, setSelectedService] = useState(null);
   const [currentView, setCurrentView] = useState('website'); // 'website' | 'admin'
   const [adminUser, setAdminUser] = useState(null);
   const [isCheckingAuth, setIsCheckingAuth] = useState(true);
@@ -97,7 +97,7 @@ function SalonApp() {
   };
 
   const handleSelectService = (serviceTitle) => {
-    setSelectedService(serviceTitle);
+    setSelectedService({ title: serviceTitle, key: Date.now() });
     const el = document.querySelector('#booking');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });

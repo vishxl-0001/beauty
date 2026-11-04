@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight, Calendar, Sparkles } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Calendar, Sparkles, MapPin } from 'lucide-react';
 
 export default function Lightbox({
   isOpen,
@@ -30,6 +30,12 @@ export default function Lightbox({
   }, [isOpen, onClose, onPrev, onNext]);
 
   if (!isOpen || !currentItem) return null;
+
+  const isStudioOrTeam =
+    currentItem.filter === 'studio' ||
+    currentItem.categoryName === 'Studio & Team' ||
+    currentItem.id === 'owner' ||
+    currentItem.id === 'storefront';
 
   return (
     <AnimatePresence>
@@ -127,17 +133,25 @@ export default function Lightbox({
             </div>
 
             <div className="pt-4 border-t border-[#EADBBA] space-y-3">
-              <button
-                type="button"
-                onClick={() => {
-                  onClose();
-                  onBookService(currentItem.title);
-                }}
-                className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-[#D4AF37] via-[#DFB76C] to-[#B38728] text-white text-sm font-semibold shadow-md shadow-[#C9A24B]/25 hover:shadow-lg hover:shadow-[#C9A24B]/35 flex items-center justify-center gap-2 active:scale-95 transition-all"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>Book a Look Like This</span>
-              </button>
+              {/* Only show "Book a Look Like This" for actual hair/nail styles, NOT Studio & Team cards */}
+              {!isStudioOrTeam ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    onClose();
+                    onBookService(currentItem.title);
+                  }}
+                  className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-[#D4AF37] via-[#DFB76C] to-[#B38728] text-white text-sm font-semibold shadow-md shadow-[#C9A24B]/25 hover:shadow-lg hover:shadow-[#C9A24B]/35 flex items-center justify-center gap-2 active:scale-95 transition-all"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Book a Look Like This</span>
+                </button>
+              ) : (
+                <div className="py-3 px-4 rounded-2xl bg-[#FAF5EA] border border-[#EADBBA] text-center text-xs font-medium text-[#7A6652] flex items-center justify-center gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-[#C9A24B]" />
+                  <span>Norwen Beauty Salon • 98 Napier Road, Terrace End</span>
+                </div>
+              )}
 
               <p className="text-[11px] text-center text-[#8C7355]">
                 Press <kbd className="px-1.5 py-0.5 rounded bg-gray-100 text-[#251B12] font-mono">←</kbd> <kbd className="px-1.5 py-0.5 rounded bg-gray-100 text-[#251B12] font-mono">→</kbd> to browse • <kbd className="px-1.5 py-0.5 rounded bg-gray-100 text-[#251B12] font-mono">Esc</kbd> to exit

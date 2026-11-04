@@ -4,6 +4,59 @@ import { Calendar, Clock, User, Phone, Mail, Sparkles, CheckCircle2, Heart, Aler
 import confetti from 'canvas-confetti';
 import { useSalon } from '../context/SalonContext';
 
+// Smart service title resolver to guarantee 100% auto-fill for any clicked card or look
+const resolveServiceTitle = (inputTitle, availableServices = []) => {
+  if (!inputTitle || typeof inputTitle !== 'string') return '';
+  const clean = inputTitle.trim().toLowerCase();
+
+  // 1. Direct exact match
+  const exact = availableServices.find(
+    (s) => s.title.toLowerCase() === clean || s.id.toLowerCase() === clean
+  );
+  if (exact) return exact.title;
+
+  // 2. Intelligent keyword mapping for gallery looks / styles
+  if (clean.includes('haircut') || clean.includes('cut') || clean.includes('blowout') || clean.includes('curling') || clean.includes('styling')) {
+    const s = availableServices.find((x) => x.title.toLowerCase().includes('haircut'));
+    if (s) return s.title;
+  }
+  if (clean.includes('color') || clean.includes('highlight') || clean.includes('balayage') || clean.includes('blonde') || clean.includes('violet') || clean.includes('emerald') || clean.includes('underlights')) {
+    const s = availableServices.find((x) => x.title.toLowerCase().includes('color'));
+    if (s) return s.title;
+  }
+  if (clean.includes('perm') || clean.includes('straight') || clean.includes('texture')) {
+    const s = availableServices.find((x) => x.title.toLowerCase().includes('perm'));
+    if (s) return s.title;
+  }
+  if (clean.includes('hair spa') || clean.includes('scalp') || clean.includes('basin')) {
+    const s = availableServices.find((x) => x.title.toLowerCase().includes('spa'));
+    if (s) return s.title;
+  }
+  if (clean.includes('keratin') || clean.includes('frizz') || clean.includes('protein smoothing')) {
+    const s = availableServices.find((x) => x.title.toLowerCase().includes('keratin'));
+    if (s) return s.title;
+  }
+  if (clean.includes('conditioning') || clean.includes('mask') || clean.includes('hydration')) {
+    const s = availableServices.find((x) => x.title.toLowerCase().includes('conditioning'));
+    if (s) return s.title;
+  }
+  if (clean.includes('threading') || clean.includes('brow') || clean.includes('facial hair')) {
+    const s = availableServices.find((x) => x.title.toLowerCase().includes('threading'));
+    if (s) return s.title;
+  }
+  if (clean.includes('waxing') || clean.includes('body care') || clean.includes('smooth skin')) {
+    const s = availableServices.find((x) => x.title.toLowerCase().includes('waxing'));
+    if (s) return s.title;
+  }
+  if (clean.includes('manicure') || clean.includes('pedicure') || clean.includes('nail') || clean.includes('french') || clean.includes('pearl')) {
+    const s = availableServices.find((x) => x.title.toLowerCase().includes('manicure'));
+    if (s) return s.title;
+  }
+
+  // Fallback to the exact title
+  return inputTitle;
+};
+
 export default function BookingSection({ preSelectedService }) {
   const { services, businessDetails, submitBooking } = useSalon();
   const salonServices = services;
@@ -21,17 +74,38 @@ export default function BookingSection({ preSelectedService }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Update selected service when prop changes
+  // Auto-fill selected service whenever user selects any service anywhere
   useEffect(() => {
     if (preSelectedService) {
-      setFormData((prev) => ({ ...prev, service: preSelectedService }));
-      // Scroll smoothly to booking if requested
+      const rawTitle =
+        typeof preSelectedService === 'object' && preSelectedService !== null
+          ? preSelectedService.title
+          : preSelectedService;
+      if (!rawTitle) return;
+
+      const resolved = resolveServiceTitle(rawTitle, salonServices);
+      setFormData((prev) => ({ ...prev, service: resolved }));
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next.service;
+        return next;
+      });
+
+      // Scroll smoothly to booking
       const bookingEl = document.querySelector('#booking');
       if (bookingEl) {
         bookingEl.scrollIntoView({ behavior: 'smooth' });
       }
+
+      // Automatically place cursor on Full Name so the user just types their details
+      setTimeout(() => {
+        const nameInput = document.querySelector('#booking-fullName');
+        if (nameInput) {
+          nameInput.focus();
+        }
+      }, 550);
     }
-  }, [preSelectedService]);
+  }, [preSelectedService, salonServices]);
 
   const timeSlots = [
     '09:00 AM',
@@ -74,13 +148,13 @@ export default function BookingSection({ preSelectedService }) {
       // Connect to backend API: POST /api/bookings
       await submitBooking(formData);
 
-      // Trigger celebration confetti with pink, rose gold & gold colors
+      // Trigger celebration confetti with royal gold & champagne colors
       try {
         confetti({
-          particleCount: 80,
-          spread: 70,
+          particleCount: 85,
+          spread: 75,
           origin: { y: 0.6 },
-          colors: ['#C9A24B', '#C9A24B', '#E6C36E', '#D9A58B', '#FFFFFF'],
+          colors: ['#D4AF37', '#C9A24B', '#E6C36E', '#B38728', '#FFFFFF'],
         });
       } catch (err) {
         // Fallback silently if canvas not supported
@@ -110,7 +184,7 @@ export default function BookingSection({ preSelectedService }) {
   };
 
   return (
-    <section id="booking" className="py-20 md:py-28 relative overflow-hidden bg-gradient-to-b from-[#FFFDFB] via-[#FAF5EA] to-[#FFFDFB]">
+    <section id="booking" className="py-20 md:py-28 relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF5EA] to-[#FFFDF9]">
       {/* Decorative Blur Orbs */}
       <div className="absolute top-1/4 left-10 w-96 h-96 rounded-full bg-[#EADBBA]/50 blur-3xl -z-10 pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[#F6EBDD]/60 blur-3xl -z-10 pointer-events-none" />
@@ -118,7 +192,7 @@ export default function BookingSection({ preSelectedService }) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF5EA] border border-[#EADBBA] text-xs font-semibold text-[#C9A24B] uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF5EA] border border-[#EADBBA] text-xs font-semibold text-[#A67C1E] uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5 text-[#C9A24B]" />
             <span>Reserve Your Salon Chair</span>
           </div>
@@ -128,7 +202,7 @@ export default function BookingSection({ preSelectedService }) {
           </h2>
 
           <p className="text-sm sm:text-base text-[#251B12]/75 leading-relaxed font-normal">
-            Take a moment for yourself. Choose your desired treatment and date, and Wendyl will reach out to confirm your booking and welcome you.
+            Take a moment for yourself. Choose your desired treatment and date, and Wendy will reach out to confirm your booking and welcome you.
           </p>
         </div>
 
@@ -148,11 +222,31 @@ export default function BookingSection({ preSelectedService }) {
               </div>
             </div>
 
-            <div className="hidden sm:flex items-center gap-1.5 text-xs text-[#C9A24B] font-medium bg-[#FAF5EA] px-3 py-1 rounded-full border border-[#EADBBA]">
-              <Heart className="w-3.5 h-3.5 fill-[#C9A24B]" />
+            <div className="hidden sm:flex items-center gap-1.5 text-xs text-[#A67C1E] font-semibold bg-[#FAF5EA] px-3 py-1 rounded-full border border-[#EADBBA]">
+              <Sparkles className="w-3.5 h-3.5 text-[#C9A24B]" />
               <span>Glow Up With Us</span>
             </div>
           </div>
+
+          {/* Auto-filled service notification chip */}
+          {formData.service && (
+            <motion.div
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-8 p-3.5 rounded-2xl bg-[#FAF5EA] border border-[#EADBBA] flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-2xs"
+            >
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#C9A24B] shrink-0" />
+                <span className="text-xs sm:text-sm text-[#251B12]">
+                  Auto-Filled Treatment:{' '}
+                  <strong className="text-[#A67C1E] font-semibold">{formData.service}</strong>
+                </span>
+              </div>
+              <span className="text-[11px] font-medium text-[#8C7355]">
+                ✓ Service selected — enter your details below to confirm
+              </span>
+            </motion.div>
+          )}
 
           <AnimatePresence mode="wait">
             {!isSubmitted ? (
@@ -168,7 +262,10 @@ export default function BookingSection({ preSelectedService }) {
                 {/* Row 1: Full Name & Phone */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
+                    <label
+                      htmlFor="booking-fullName"
+                      className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2"
+                    >
                       Full Name *
                     </label>
                     <div className="relative">
@@ -176,6 +273,7 @@ export default function BookingSection({ preSelectedService }) {
                         <User className="w-4 h-4" />
                       </div>
                       <input
+                        id="booking-fullName"
                         type="text"
                         value={formData.fullName}
                         onChange={(e) => {
@@ -199,7 +297,10 @@ export default function BookingSection({ preSelectedService }) {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
+                    <label
+                      htmlFor="booking-phone"
+                      className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2"
+                    >
                       Phone Number *
                     </label>
                     <div className="relative">
@@ -207,6 +308,7 @@ export default function BookingSection({ preSelectedService }) {
                         <Phone className="w-4 h-4" />
                       </div>
                       <input
+                        id="booking-phone"
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => {
@@ -233,7 +335,10 @@ export default function BookingSection({ preSelectedService }) {
                 {/* Row 2: Email & Service */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
+                    <label
+                      htmlFor="booking-email"
+                      className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2"
+                    >
                       Email Address *
                     </label>
                     <div className="relative">
@@ -241,6 +346,7 @@ export default function BookingSection({ preSelectedService }) {
                         <Mail className="w-4 h-4" />
                       </div>
                       <input
+                        id="booking-email"
                         type="email"
                         value={formData.email}
                         onChange={(e) => {
@@ -264,11 +370,15 @@ export default function BookingSection({ preSelectedService }) {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
+                    <label
+                      htmlFor="booking-service"
+                      className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2"
+                    >
                       Select Treatment *
                     </label>
                     <div className="relative">
                       <select
+                        id="booking-service"
                         value={formData.service}
                         onChange={(e) => {
                           setFormData({ ...formData, service: e.target.value });
@@ -286,6 +396,11 @@ export default function BookingSection({ preSelectedService }) {
                             {svc.title} ({svc.price})
                           </option>
                         ))}
+                        {/* If a custom look was pre-selected, dynamically display it as valid option */}
+                        {formData.service &&
+                          !salonServices.some((s) => s.title === formData.service) && (
+                            <option value={formData.service}>{formData.service}</option>
+                          )}
                         <option value="Custom Consultation & Styling">
                           Custom Consultation & Styling (Tailored)
                         </option>
@@ -306,7 +421,10 @@ export default function BookingSection({ preSelectedService }) {
                 {/* Row 3: Preferred Date & Time Slot */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
+                    <label
+                      htmlFor="booking-date"
+                      className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2"
+                    >
                       Preferred Date *
                     </label>
                     <div className="relative">
@@ -314,6 +432,7 @@ export default function BookingSection({ preSelectedService }) {
                         <Calendar className="w-4 h-4" />
                       </div>
                       <input
+                        id="booking-date"
                         type="date"
                         min={new Date().toISOString().split('T')[0]}
                         value={formData.date}
@@ -337,7 +456,10 @@ export default function BookingSection({ preSelectedService }) {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
+                    <label
+                      htmlFor="booking-timeSlot"
+                      className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2"
+                    >
                       Preferred Time Slot *
                     </label>
                     <div className="relative">
@@ -345,6 +467,7 @@ export default function BookingSection({ preSelectedService }) {
                         <Clock className="w-4 h-4" />
                       </div>
                       <select
+                        id="booking-timeSlot"
                         value={formData.timeSlot}
                         onChange={(e) => {
                           setFormData({ ...formData, timeSlot: e.target.value });
@@ -376,37 +499,40 @@ export default function BookingSection({ preSelectedService }) {
                   </div>
                 </div>
 
-                {/* Notes / Inspiration */}
+                {/* Row 4: Personal Notes or Hair Goals */}
                 <div>
-                  <label className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2">
-                    Notes or Style Requests (Optional)
+                  <label
+                    htmlFor="booking-notes"
+                    className="block text-xs font-semibold text-[#251B12] uppercase tracking-wider mb-2"
+                  >
+                    Special Requests or Hair Goals (Optional)
                   </label>
                   <textarea
-                    rows={3}
+                    id="booking-notes"
+                    rows="3"
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                    placeholder="Tell Wendyl about your hair length, prior color treatments, or nail inspiration..."
+                    placeholder="Tell Wendy about your hair length, previous color treatments, or any special requests..."
                     className="w-full px-4 py-3 rounded-2xl bg-white border border-[#EADBBA] text-sm text-[#251B12] placeholder-[#251B12]/40 focus:outline-none focus:ring-2 focus:ring-[#C9A24B]/30 focus:border-[#C9A24B] transition-all"
                   />
                 </div>
 
-                {/* Submit Button */}
-                <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                {/* Submit Action Button */}
+                <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <p className="text-xs text-[#8C7355] flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-[#C9A24B]" />
-                    <span>No pre-payment required for booking requests</span>
+                    <span>No deposit required today. Wendy will contact you to confirm.</span>
                   </p>
 
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sm:w-auto px-9 py-3.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#DFB76C] to-[#B38728] text-white font-semibold text-sm shadow-lg shadow-[#C9A24B]/25 hover:shadow-xl hover:shadow-[#C9A24B]/35 active:scale-95 transition-all flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-9 py-3.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#DFB76C] to-[#B38728] text-white font-semibold text-sm shadow-lg shadow-[#C9A24B]/25 hover:shadow-xl hover:shadow-[#C9A24B]/35 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   >
                     {isSubmitting ? (
-                      <span>Reserving your spot...</span>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                     ) : (
                       <>
-                        <Sparkles className="w-4 h-4" />
                         <span>Submit Booking Request</span>
                         <ArrowRight className="w-4 h-4" />
                       </>
@@ -415,20 +541,19 @@ export default function BookingSection({ preSelectedService }) {
                 </div>
               </motion.form>
             ) : (
-              /* Success State Screen */
+              /* Success Confirmation Card */
               <motion.div
                 key="booking-success"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                className="py-10 text-center flex flex-col items-center"
+                className="py-12 flex flex-col items-center text-center"
               >
                 <div className="w-20 h-20 rounded-full bg-[#FAF5EA] border-2 border-[#C9A24B] flex items-center justify-center mb-6 shadow-lg shadow-[#C9A24B]/20">
                   <CheckCircle2 className="w-10 h-10 text-[#C9A24B] animate-pulse" />
                 </div>
 
-                <span className="text-xs font-bold uppercase tracking-widest text-[#C9A24B] mb-1">
-                  Request Received
+                <span className="text-xs font-bold uppercase tracking-widest text-[#A67C1E] mb-1">
+                  Booking Request Received!
                 </span>
 
                 <h3 className="font-display text-3xl sm:text-4xl font-semibold text-[#251B12] mb-3">
@@ -436,14 +561,17 @@ export default function BookingSection({ preSelectedService }) {
                 </h3>
 
                 <p className="text-sm sm:text-base text-[#251B12]/80 max-w-lg mb-6 leading-relaxed font-normal">
-                  Your appointment inquiry for <strong className="text-[#C9A24B]">{formData.service}</strong> on{' '}
-                  <strong>{formData.date}</strong> at <strong>{formData.timeSlot}</strong> has been received. Wendyl will reach out directly to confirm your booking!
+                  Your appointment inquiry for <strong className="text-[#A67C1E]">{formData.service}</strong> on{' '}
+                  <span className="font-semibold text-[#251B12]">{formData.date}</span> at{' '}
+                  <span className="font-semibold text-[#251B12]">{formData.timeSlot}</span> has been received. Wendy will review your slot and contact you shortly at{' '}
+                  <span className="underline font-medium text-[#251B12]">{formData.phone}</span>.
                 </p>
 
                 <div className="p-4 rounded-2xl bg-white border border-[#EADBBA] max-w-md w-full text-left text-xs text-[#251B12] space-y-1.5 mb-8 shadow-xs">
-                  <p><strong>Confirmation Contact:</strong> {formData.phone} • {formData.email}</p>
-                  <p><strong>Salon Address:</strong> {businessDetails.address}</p>
-                  <p><strong>Owner:</strong> Wendyl Tagaan ({businessDetails.phone})</p>
+                  <p className="font-semibold text-[#A67C1E]">✦ Next Steps:</p>
+                  <p>1. Keep your phone handy for a quick SMS / Call confirmation.</p>
+                  <p>2. Salon address: 98 Napier Road, Terrace End, Palmerston North.</p>
+                  <p>3. If you need urgent changes, call Wendy directly at {businessDetails.phone}.</p>
                 </div>
 
                 <button
@@ -451,7 +579,7 @@ export default function BookingSection({ preSelectedService }) {
                   onClick={handleReset}
                   className="px-6 py-2.5 rounded-full bg-white border border-[#EADBBA] text-[#251B12] text-xs font-semibold hover:border-[#C9A24B] transition-all shadow-xs"
                 >
-                  Book Another Treatment
+                  Book Another Appointment
                 </button>
               </motion.div>
             )}
